@@ -1,8 +1,7 @@
-package pl.javaproject.app;
+package pl.cinema.app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.application.Platform;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -15,7 +14,6 @@ import java.io.IOException;
  * @author Krzysztof Ksiazek
  * @author Jakub Fik
  * @since 31.03.2022
- *
  *
  */
 
@@ -35,10 +33,11 @@ public class Main extends Application {
      * @param stage
      * @throws Exception
      */
+
     @Override
     public void start(Stage stage) throws Exception {
         System.out.println("Start");
-        scene = new Scene(loadFXML("Menu"));
+        scene = new Scene(loadFXML("menuScreen"));
         stage.setScene(scene);
         stage.setTitle("Cinema");
         stage.show();
@@ -61,7 +60,7 @@ public class Main extends Application {
      * @throws IOException
      */
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/" + fxml + ".fxml"));
         return fxmlLoader.load();
     }
 

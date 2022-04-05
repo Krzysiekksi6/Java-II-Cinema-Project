@@ -3,5 +3,6 @@ module Cinema.Booking.System {
     requires javafx.controls;
     requires javafx.fxml;
 
-    exports pl.javaproject.app;
+    exports pl.cinema.app;
+    opens pl.cinema.app;
 }
