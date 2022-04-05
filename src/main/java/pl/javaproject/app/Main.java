@@ -1,8 +1,13 @@
 package pl.javaproject.app;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.application.Platform;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /**
  * The main class for our cinema booking management application
@@ -16,7 +21,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    //TODO Parent and setRoot
+    private static Scene scene;
 
     /**
      * Constructor off Main Class
@@ -33,9 +38,31 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         System.out.println("Start");
+        scene = new Scene(loadFXML("Menu"));
+        stage.setScene(scene);
         stage.setTitle("Cinema");
         stage.show();
        // Platform.exit(); Metoda ktora rowniez powoduje zatrzymanie aplikacji
+    }
+
+    /**
+     *
+     * @param fxml
+     * @throws IOException
+     */
+    static void setRoot(String fxml) throws IOException {
+        scene.setRoot(loadFXML(fxml));
+    }
+
+    /**
+     *
+     * @param fxml
+     * @return
+     * @throws IOException
+     */
+    private static Parent loadFXML(String fxml) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml + ".fxml"));
+        return fxmlLoader.load();
     }
 
     /**
