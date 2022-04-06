@@ -37,9 +37,10 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         System.out.println("Start");
-        scene = new Scene(loadFXML("menuScreen"));
+        scene = new Scene(loadFXML("mainPane"));
         stage.setScene(scene);
         stage.setTitle("Cinema");
+        stage.setResizable(false); //TODO false
         stage.show();
        // Platform.exit(); Metoda ktora rowniez powoduje zatrzymanie aplikacji
     }
