@@ -25,6 +25,11 @@
                 </Label>
             </children>
         </AnchorPane>
+      <Label fx:id="toastLabel" layoutX="134.0" layoutY="311.0" prefHeight="72.0" prefWidth="319.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
     </children>
 
 </AnchorPane>

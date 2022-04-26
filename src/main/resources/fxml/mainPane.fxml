@@ -58,11 +58,11 @@
             </HBox>
          </bottom>
          <center>
-            <HBox prefHeight="564.0" prefWidth="839.0" style="-fx-background-color: #dddd;" BorderPane.alignment="CENTER">
+            <HBox prefHeight="564.0" prefWidth="839.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="394.0" fitWidth="276.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/hobbit.jpg" />
+                        <Image url="@../images/wladca_pierscieni.jpg" />
                      </image>
                      <HBox.margin>
                         <Insets left="20.0" top="100.0" />

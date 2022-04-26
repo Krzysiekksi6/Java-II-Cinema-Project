@@ -3,22 +3,18 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.MainPaneController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.MainPaneController">
    <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0">
+      <BorderPane maxWidth="1128.0" prefHeight="701.0" prefWidth="1128.0">
          <top>
-            <HBox prefHeight="58.0" prefWidth="750.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="61.0" prefWidth="969.0" BorderPane.alignment="CENTER">
                <children>
                   <Label fx:id="cinemaLabel" prefHeight="46.0" prefWidth="185.0" text="Cinema 3D">
                      <font>
@@ -30,7 +26,7 @@
                   </Label>
                   <Button fx:id="repertorieButton" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="61.0" prefWidth="93.0" text="Repertuar">
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets left="50.0" />
                      </HBox.margin>
                   </Button>
                   <Button fx:id="priceButton" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="61.0" prefWidth="93.0" text="Cennik">
@@ -45,7 +41,7 @@
                   </Button>
                   <Button fx:id="loginButton" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="61.0" prefWidth="93.0" text="Zaloguj">
                      <HBox.margin>
-                        <Insets left="460.0" />
+                        <Insets left="100.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -57,101 +53,39 @@
          <bottom>
             <HBox prefHeight="59.0" prefWidth="750.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="59.0" prefWidth="1450.0" text="Zarezerwuj Bilet" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="59.0" prefWidth="998.0" text="Zarezerwuj Bilet" />
                </children>
             </HBox>
          </bottom>
          <center>
-            <ScrollPane fitToHeight="true" fitToWidth="true" hmax="0.0" pannable="true" vmax="0.0">
-               <content>
-                  <GridPane alignment="TOP_CENTER" style="-fx-background-color: #353238;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="206.0" minHeight="10.0" prefHeight="206.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="315.4000244140625" minHeight="10.0" prefHeight="231.40002441406247" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="171.0" minHeight="0.0" prefHeight="144.19997558593752" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/batman.jpg" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets top="250.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/moribus.jpg" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets top="600.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/hobbit.jpg" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets top="250.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/harry_potter.jpg" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets top="250.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/pies.jpg" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets top="600.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/szybcy_wsciekli.jpg" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets top="600.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/titanic.jpg" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets top="400.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/transformers.jpg" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets top="1000.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/wladca_pierscieni.jpg" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets top="1000.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                     </children>
-                  </GridPane>
-               </content>
-            </ScrollPane>
+            <HBox prefHeight="564.0" prefWidth="839.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="394.0" fitWidth="276.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/wladca_pierscieni.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" top="100.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="393.0" fitWidth="276.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/harry_potter.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" top="100.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="393.0" fitWidth="276.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/szybcy_wsciekli.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" top="100.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
          </center>
       </BorderPane>
    </children>
