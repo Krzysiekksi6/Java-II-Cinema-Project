@@ -36,16 +36,16 @@ public class LoginPaneController {
                     if (usernameBox.getText().equals("employee") && passwordBox.getText().equals("employee")) {
                         toastLabel.setText("");
                         try {
-                            //TODO pricePane -> employeePane
-                            Main.setRoot("pricePane");
+
+                            Main.setRoot("employeePane");
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     } else if (usernameBox.getText().equals("chef") && passwordBox.getText().equals("chef")) {
                         toastLabel.setText("");
                         try {
-                            //TODO repertoriePane -> chefPane
-                            Main.setRoot("repertoire");
+
+                            Main.setRoot("chefPane");
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
