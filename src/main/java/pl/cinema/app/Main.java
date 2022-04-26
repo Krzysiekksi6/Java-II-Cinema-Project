@@ -40,7 +40,7 @@ public class Main extends Application {
         scene = new Scene(loadFXML("mainPane"));
         stage.setScene(scene);
         stage.setTitle("Cinema");
-        stage.setResizable(true); //TODO false
+        stage.setResizable(false); //TODO false
         stage.show();
        // Platform.exit(); Metoda ktora rowniez powoduje zatrzymanie aplikacji
     }

@@ -37,6 +37,17 @@ public class MainPaneController {
                 }
             }
         });
+
+        cinemaButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    Main.setRoot("cinemaDescriptionPane");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
 
