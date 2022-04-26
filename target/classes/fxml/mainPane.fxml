@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.MainPaneController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
@@ -63,9 +62,9 @@
             </HBox>
          </bottom>
          <center>
-            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" vbarPolicy="ALWAYS">
+            <ScrollPane fitToHeight="true" fitToWidth="true" hmax="0.0" pannable="true" vmax="0.0">
                <content>
-                  <GridPane prefHeight="748.0" prefWidth="1440.0">
+                  <GridPane alignment="TOP_CENTER" style="-fx-background-color: #353238;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -73,71 +72,80 @@
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints maxHeight="206.0" minHeight="10.0" prefHeight="206.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="301.0" minHeight="10.0" prefHeight="192.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="171.0" minHeight="0.0" prefHeight="109.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="315.4000244140625" minHeight="10.0" prefHeight="231.40002441406247" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="171.0" minHeight="0.0" prefHeight="144.19997558593752" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <ImageView fitHeight="200.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/batman.jpg" />
                            </image>
                            <GridPane.margin>
-                              <Insets top="30.0" />
+                              <Insets top="250.0" />
                            </GridPane.margin>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/moribus.jpg" />
                            </image>
+                           <GridPane.margin>
+                              <Insets top="600.0" />
+                           </GridPane.margin>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/hobbit.jpg" />
                            </image>
                            <GridPane.margin>
-                              <Insets top="30.0" />
+                              <Insets top="250.0" />
                            </GridPane.margin>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/harry_potter.jpg" />
                            </image>
                            <GridPane.margin>
-                              <Insets top="30.0" />
+                              <Insets top="250.0" />
                            </GridPane.margin>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/pies.jpg" />
                            </image>
+                           <GridPane.margin>
+                              <Insets top="600.0" />
+                           </GridPane.margin>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/szybcy_wsciekli.jpg" />
                            </image>
+                           <GridPane.margin>
+                              <Insets top="600.0" />
+                           </GridPane.margin>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/titanic.jpg" />
                            </image>
                            <GridPane.margin>
-                              <Insets top="75.0" />
+                              <Insets top="400.0" />
                            </GridPane.margin>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/transformers.jpg" />
                            </image>
                            <GridPane.margin>
-                              <Insets top="75.0" />
+                              <Insets top="1000.0" />
                            </GridPane.margin>
                         </ImageView>
-                        <ImageView fitHeight="200.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                        <ImageView fitHeight="380.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/wladca_pierscieni.jpg" />
                            </image>
                            <GridPane.margin>
-                              <Insets top="75.0" />
+                              <Insets top="1000.0" />
                            </GridPane.margin>
                         </ImageView>
                      </children>
