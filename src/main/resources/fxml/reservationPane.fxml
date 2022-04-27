@@ -44,7 +44,10 @@
          <center>
             <AnchorPane prefHeight="602.0" prefWidth="734.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="340.0" layoutY="30.0" text="Legenda" />
+                  <Label layoutX="338.0" layoutY="14.0" text="Legenda">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
                   <Button layoutX="201.0" layoutY="48.0" mnemonicParsing="false" text="Wolne" />
                   <Button layoutX="337.0" layoutY="48.0" mnemonicParsing="false" text="Zajete" />
                   <Button layoutX="461.0" layoutY="48.0" mnemonicParsing="false" text="VIP" />
@@ -119,6 +122,13 @@
                </children>
             </AnchorPane>
          </center>
+         <bottom>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="reservationButton" mnemonicParsing="false" prefHeight="113.0" prefWidth="914.0" text="Zamów" />
+               </children>
+            </HBox>
+         </bottom>
       </BorderPane>
    </children>
 </StackPane>
