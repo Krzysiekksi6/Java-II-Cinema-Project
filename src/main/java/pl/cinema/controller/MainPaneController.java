@@ -26,6 +26,9 @@ public class MainPaneController {
     @FXML
     private Button repertorieButton;
 
+    @FXML
+    private Button reservationButton;
+
     public void initialize() {
         loginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -43,6 +46,39 @@ public class MainPaneController {
             public void handle(ActionEvent actionEvent) {
                 try {
                     Main.setRoot("cinemaDescriptionPane");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        priceButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    Main.setRoot("pricePane");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        repertorieButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    Main.setRoot("repertoirePane");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        reservationButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    Main.setRoot("reservationPane");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

@@ -25,7 +25,7 @@ public class Main extends Application {
      * Constructor off Main Class
      */
     public Main() {
-        System.out.println("Constructor");
+        //System.out.println("Constructor");
     }
 
     /**
@@ -36,7 +36,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        System.out.println("Start");
+       // System.out.println("Start");
         scene = new Scene(loadFXML("mainPane"));
         stage.setScene(scene);
         stage.setTitle("Cinema");
@@ -65,13 +65,14 @@ public class Main extends Application {
         return fxmlLoader.load();
     }
 
+
     /**
      * Method that can be use for read application state
      * @throws Exception
      */
     @Override
     public void init() throws Exception {
-        System.out.println("Init");
+        //System.out.println("Init");
     }
 
     /**
@@ -80,7 +81,7 @@ public class Main extends Application {
      */
     @Override
     public void stop() throws Exception {
-        System.out.println("Stop");
+       // System.out.println("Stop");
     }
 
     /**
@@ -88,7 +89,7 @@ public class Main extends Application {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("Main");
+        //System.out.println("Main");
         launch(args);
     }
 

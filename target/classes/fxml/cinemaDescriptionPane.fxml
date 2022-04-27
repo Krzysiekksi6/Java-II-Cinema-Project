@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
@@ -27,5 +28,6 @@
       <Label layoutX="80.0" layoutY="225.0" text="1220" />
       <Label layoutX="54.0" layoutY="271.0" text="4" />
       <TextArea editable="false" layoutX="80.0" layoutY="373.0" prefHeight="102.0" prefWidth="150.0" text="- szeroką ofertę ciast,&#10;- zimne napoje (pepsi,  soki, woda),&#10;- świeżo wyciskane smoothie" wrapText="true" />
+      <Button fx:id="backButton" layoutX="797.0" layoutY="23.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" text="Back" />
    </children>
 </AnchorPane>

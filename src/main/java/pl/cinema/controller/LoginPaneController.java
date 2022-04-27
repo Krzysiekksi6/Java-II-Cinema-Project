@@ -25,10 +25,26 @@ public class LoginPaneController {
     @FXML
     private Label toastLabel;
 
+    @FXML
+    private Button backButton;
 
 
 
+
+    /**
+     *
+     */
     public void initialize() {
+        backButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    Main.setRoot("mainPane");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         logInButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
