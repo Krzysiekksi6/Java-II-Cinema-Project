@@ -33,7 +33,7 @@
             <VBox prefHeight="602.0" prefWidth="206.0" BorderPane.alignment="CENTER">
                <children>
                   <Label prefHeight="46.0" prefWidth="153.0" text="Wybierz datę" />
-                  <DatePicker />
+                  <DatePicker fx:id="datePicker" onAction="#getDate" />
                   <Label prefHeight="44.0" prefWidth="154.0" text="Wybierz film" />
                   <ChoiceBox prefHeight="27.0" prefWidth="158.0" />
                   <Label prefHeight="46.0" prefWidth="160.0" text="Wybierz godzinę" />
@@ -119,6 +119,7 @@
                   <Label layoutX="41.0" layoutY="292.0" text="4" />
                   <Label layoutX="41.0" layoutY="346.0" text="5" />
                   <Label layoutX="41.0" layoutY="392.0" text="6" />
+                  <Label fx:id="dataLabel" layoutX="606.0" layoutY="148.0" prefHeight="48.0" prefWidth="71.0" text="Label" />
                </children>
             </AnchorPane>
          </center>
