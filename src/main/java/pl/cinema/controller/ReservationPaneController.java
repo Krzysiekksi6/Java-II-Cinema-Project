@@ -12,6 +12,7 @@ import pl.cinema.app.Main;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class ReservationPaneController {
     @FXML
@@ -33,7 +34,8 @@ public class ReservationPaneController {
      */
     public void getDate(ActionEvent event) {
         LocalDate myDate = datePicker.getValue();
-        dataLabel.setText(myDate.toString());
+        String myFormattedDate = myDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        dataLabel.setText(myFormattedDate);
     }
 
     public void initialize(){

@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.ReservationPaneController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
@@ -34,7 +33,7 @@
             <VBox prefHeight="602.0" prefWidth="206.0" BorderPane.alignment="CENTER">
                <children>
                   <Label prefHeight="46.0" prefWidth="153.0" text="Wybierz datę" />
-                  <DatePicker fx:id="datePicker" onAction="#getDate" />
+                  <DatePicker fx:id="datePicker" onAction="#getDate" promptText="Enter a date" />
                   <Label prefHeight="44.0" prefWidth="154.0" text="Wybierz film" />
                   <ChoiceBox prefHeight="27.0" prefWidth="158.0" />
                   <Label prefHeight="46.0" prefWidth="160.0" text="Wybierz godzinę" />
