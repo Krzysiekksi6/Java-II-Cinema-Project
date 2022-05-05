@@ -3,9 +3,11 @@ package pl.cinema.controller;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import pl.cinema.app.Main;
 
 import java.io.IOException;
@@ -20,6 +22,9 @@ public class ReservationPaneController {
 
     @FXML
     private Label dataLabel;
+
+    @FXML
+    private Button reservationButton;
 
     /**
      * Zeby nie wywalało Null Pointer Exception trzeba pobierac dane podobnie jak tutaj nizej getDate i nadać metode
@@ -42,6 +47,9 @@ public class ReservationPaneController {
                 }
             }
         });
+
+
+
 
 
     }

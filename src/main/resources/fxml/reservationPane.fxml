@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.ReservationPaneController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
@@ -47,7 +48,8 @@
                   <Label layoutX="338.0" layoutY="14.0" text="Legenda">
                      <font>
                         <Font name="System Bold" size="12.0" />
-                     </font></Label>
+                     </font>
+                  </Label>
                   <Button layoutX="201.0" layoutY="48.0" mnemonicParsing="false" style="-fx-background-color: #32CD32;" text="Wolne" />
                   <Button layoutX="337.0" layoutY="48.0" mnemonicParsing="false" style="-fx-background-color: #FF6347;" text="Zajete" />
                   <Button layoutX="461.0" layoutY="48.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="43.0" style="-fx-background-color: #FFD700;" text="VIP" />
