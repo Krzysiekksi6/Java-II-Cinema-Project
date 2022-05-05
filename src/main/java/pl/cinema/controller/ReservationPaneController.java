@@ -21,6 +21,11 @@ public class ReservationPaneController {
     @FXML
     private Label dataLabel;
 
+    /**
+     * Zeby nie wywalało Null Pointer Exception trzeba pobierac dane podobnie jak tutaj nizej getDate i nadać metode
+     * getDate na onAction w Scene Builder
+     * @param event
+     */
     public void getDate(ActionEvent event) {
         LocalDate myDate = datePicker.getValue();
         dataLabel.setText(myDate.toString());
