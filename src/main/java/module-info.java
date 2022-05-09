@@ -7,6 +7,7 @@ module Cinema.Booking.System {
     requires kernel;
     requires layout;
     requires barcodes;
+    requires java.sql;
 
     exports pl.cinema.app;
     exports pl.cinema.controller;
