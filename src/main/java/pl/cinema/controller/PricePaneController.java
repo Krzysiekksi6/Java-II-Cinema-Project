@@ -15,23 +15,9 @@ public class PricePaneController {
     @FXML
     private TableView tableViewPrice;
 
-    @FXML
-    private Button backButton;
-
-    Connect connect = new Connect();
     public void initialize(){
-        backButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                connect.CreateTable();
-                try {
-                    Main.setRoot("mainPane");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
 
-        connect.gettingDataInputData(tableViewPrice,"SELECT * FROM roznosci.cennik;");
+
+        Main.connect.gettingDataInputData(tableViewPrice,"SELECT * FROM roznosci.cennik;");
     }
 }

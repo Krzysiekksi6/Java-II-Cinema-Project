@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="443.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.AddMovieController">
+   <children>
+      <TextField fx:id="nameOfMovie" layoutX="145.0" layoutY="46.0" prefHeight="25.0" prefWidth="206.0" />
+      <Label layoutX="21.0" layoutY="320.0" prefHeight="17.0" prefWidth="124.0" text="Choose picture of movie">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <TextField fx:id="chooseDate" layoutX="145.0" layoutY="116.0" prefHeight="25.0" prefWidth="206.0" />
+      <TextField fx:id="timeStart" layoutX="145.0" layoutY="149.0" prefHeight="25.0" prefWidth="206.0" />
+      <TextField fx:id="howLong" layoutX="145.0" layoutY="181.0" prefHeight="25.0" prefWidth="206.0" />
+      <TextField fx:id="timeEnd" layoutX="145.0" layoutY="214.0" prefHeight="25.0" prefWidth="206.0" />
+      <TextField fx:id="hall" layoutX="145.0" layoutY="250.0" prefHeight="25.0" prefWidth="206.0" />
+      <TextField fx:id="minAge" layoutX="145.0" layoutY="285.0" prefHeight="25.0" prefWidth="206.0" />
+      <TextField fx:id="choosePicture" layoutX="145.0" layoutY="316.0" prefHeight="25.0" prefWidth="206.0" />
+      <Label layoutX="21.0" layoutY="86.0" prefHeight="17.0" prefWidth="124.0" text="Category of movie" />
+      <Label layoutX="21.0" layoutY="120.0" prefHeight="17.0" prefWidth="124.0" text="Choose date " />
+      <Label layoutX="21.0" layoutY="153.0" prefHeight="17.0" prefWidth="124.0" text="Time start " />
+      <Label layoutX="21.0" layoutY="185.0" prefHeight="17.0" prefWidth="124.0" text="How long" />
+      <Label layoutX="21.0" layoutY="218.0" prefHeight="17.0" prefWidth="124.0" text="Time end" />
+      <Label layoutX="21.0" layoutY="254.0" prefHeight="17.0" prefWidth="124.0" text="Hall" />
+      <Label layoutX="21.0" layoutY="289.0" prefHeight="17.0" prefWidth="124.0" text="Minium age" />
+      <Label layoutX="21.0" layoutY="50.0" prefHeight="17.0" prefWidth="124.0" text="Name of movie" />
+      <Label layoutX="21.0" layoutY="349.0" prefHeight="17.0" prefWidth="124.0" text="Sound option" />
+      <Label alignment="CENTER" layoutX="156.0" prefHeight="34.0" prefWidth="184.0" text="Add movie">
+         <effect>
+            <Glow level="0.57" />
+         </effect>
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <MenuButton fx:id="category" layoutX="145.0" layoutY="82.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="206.0" text="Choose category ">
+        <items>
+          <MenuItem fx:id="comedy" mnemonicParsing="false" text="Comedy " />
+          <MenuItem fx:id="drama" mnemonicParsing="false" text="Drama" />
+            <MenuItem fx:id="thriller" mnemonicParsing="false" text="Thriller" />
+            <MenuItem fx:id="horror" mnemonicParsing="false" text="Horror" />
+            <MenuItem fx:id="animation" mnemonicParsing="false" text="Animation" />
+            <MenuItem fx:id="musical" mnemonicParsing="false" text="Musical" />
+            <MenuItem fx:id="family" mnemonicParsing="false" text="Family" />
+            <MenuItem fx:id="action" mnemonicParsing="false" text="Action" />
+        </items>
+      </MenuButton>
+      <MenuButton fx:id="typeOfSound" layoutX="145.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="206.0" text="Type of sound ">
+         <items>
+            <MenuItem fx:id="sub" mnemonicParsing="false" text="Subtitles" />
+            <MenuItem fx:id="lector" mnemonicParsing="false" text="Lector" />
+            <MenuItem fx:id="dubbing" mnemonicParsing="false" text="Dubbing" />
+         </items>
+      </MenuButton>
+      <Button layoutX="356.0" layoutY="316.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Load image" />
+      <Button layoutX="356.0" layoutY="250.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Check availability">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button layoutX="356.0" layoutY="116.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Calendar" />
+      <Button fx:id="addBut" layoutX="182.0" layoutY="386.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="133.0" text="Add" />
+   </children>
+</AnchorPane>

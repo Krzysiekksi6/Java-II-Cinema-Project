@@ -20,6 +20,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     private static Scene scene;
+    public static Connect connect = new Connect();
 
     /**
      * Constructor off Main Class

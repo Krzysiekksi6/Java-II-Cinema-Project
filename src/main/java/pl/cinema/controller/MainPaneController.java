@@ -65,10 +65,11 @@ public class MainPaneController {
                 FXMLLoader fxmlLoader = new FXMLLoader(PricePaneController.class.getResource("/fxml/pricePane.fxml"));
                 Scene scene = null;
                 try {
-                    scene = new Scene(fxmlLoader.load(),792,192);
+                    scene = new Scene(fxmlLoader.load(),660,162);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                stage.setTitle("Cennik");
                 stage.setResizable(false);
                 stage.setScene(scene);
                 stage.show();

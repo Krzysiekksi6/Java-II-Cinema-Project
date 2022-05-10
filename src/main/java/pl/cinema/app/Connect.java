@@ -122,20 +122,20 @@ public class Connect {
         }
     }
 
-    public void gettingDataInputData(TableView tableView,String queryM){
+    public void gettingDataInputData(TableView tableView,String queryM) {
         ObservableList<ObservableList> data = FXCollections.observableArrayList();
-        try{
+        try {
             Connection connection = makeConnection();
             ResultSet rs = connection.createStatement().executeQuery(queryM);
 
-            for(int i=1 ; i<rs.getMetaData().getColumnCount(); i++){
+            for (int i = 1; i < rs.getMetaData().getColumnCount(); i++) {
                 int j = i;
-                TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i+1));
-                if(rs.getMetaData().getColumnName(i+1).contains("email")){
-                    indeks = i+1;
+                TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i + 1));
+                if (rs.getMetaData().getColumnName(i + 1).contains("email")) {
+                    indeks = i + 1;
                 }
-                col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList,String>, ObservableValue<String>>(){
-                    public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList,String> param) {
+                col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>() {
+                    public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param) {
                         return new SimpleStringProperty(param.getValue().get(j).toString());
                     }
                 });
@@ -144,16 +144,15 @@ public class Connect {
             }
 
 
-            while(rs.next()){
+            while (rs.next()) {
                 //Iterate Row
                 ObservableList<String> row = FXCollections.observableArrayList();
-                for(int i=1 ; i<=rs.getMetaData().getColumnCount(); i++){
-                    if(rs.getString(i)==null) {
+                for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+                    if (rs.getString(i) == null) {
                         row.add("null");
-                    }
-                    else {
+                    } else {
                         row.add(rs.getString(i));
-                        if(i==indeks){
+                        if (i == indeks) {
                             emails.add(rs.getString(i));
                         }
                     }
@@ -161,32 +160,44 @@ public class Connect {
                 data.add(row);
 
             }
-            System.out.println("Pobrano dane,zapytanie:"+getQueryPrice());
+            System.out.println("Pobrano dane,zapytanie:" + getQueryPrice());
             System.out.println(emails.toString());
             tableView.setItems(data);
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Nie udalo sie pobrac");
         }
     }
 
-    public void CreateTable(){
-        // Open a connection
+
+
+    public void addMovieToBase(int idMovie,String nameOfMovie,
+                               String movieCategory,String startTime,int howLong,
+                               String endTime,String Hall,int minimumAge,String picture,String typeOfScreen,String date){
+        //to test
+        /*
+        	EXAMPLE
+	INSERT INTO roznosci.bazafilmow
+	(id_filmu,nazwa_filmu,kategoria_filmu,godzina_rozpoczecia
+	 ,czas_trwania_minuty,godzina_zakonczenia,sala,min_wiek,obraz_filmu
+	 ,forma_dzwieku,data_filmu)
+	VALUES
+		(3,'Americano2','Action','14:20',120,'14:30','C2',17,null,'2d','17.10.2020');
+         */
         try(Connection conn = DriverManager.getConnection(url, user, pass);
         ) {
-            String sql = "CREATE TABLE roznosci.REGISTRATION " +
-                    "(id INTEGER not NULL, " +
-                    " first VARCHAR(255), " +
-                    " last VARCHAR(255), " +
-                    " age INTEGER, " +
-                    " PRIMARY KEY ( id ))";
+            String sql = "INSERT INTO roznosci.bazafilmow " +
+                    "(id_filmu,nazwa_filmu,kategoria_filmu,godzina_rozpoczecia,czas_trwania_minuty,godzina_zakonczenia,sala,min_wiek," +
+                    "obraz_filmu,forma_dzwieku,data_filmu) " +
+                    "VALUES" +
+                    '(' + idMovie + "," +  "\'" + nameOfMovie + "\'"  + ',' +  "\'" + movieCategory + "\'"  + ',' +  "\'" + startTime + "\'"  + ',' +  howLong   +
+                    ',' + "\'" + endTime + "\'"  + ',' +  "\'" + Hall + "\'"  + ',' + minimumAge + ',' +  "\'" + picture + "\'"  +','+  "\'" + typeOfScreen + "\'"  + ',' +  "\'" + date + "\'" +  ')';
 
             stmt.executeUpdate(sql);
             System.out.println("Created table in given database...");
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     public static String getPasswd() {
