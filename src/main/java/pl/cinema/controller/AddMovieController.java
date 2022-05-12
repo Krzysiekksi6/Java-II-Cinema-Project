@@ -3,10 +3,7 @@ package pl.cinema.controller;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import org.w3c.dom.Text;
 import pl.cinema.app.Main;
 
@@ -43,8 +40,6 @@ public class AddMovieController {
     TextField nameOfMovie;
     //tu koncze XD ide grac w lige d-,-b
     @FXML
-    TextField chooseDate;
-    @FXML
     TextField timeStart;
     @FXML
     TextField howLong;
@@ -58,24 +53,101 @@ public class AddMovieController {
     TextField choosePicture;
     @FXML
     Button addBut;
+    @FXML
+    DatePicker chooseDate;
 
     public void initialize(){
-
+        /*
+        String idMovie,String nameOfMovie,
+                               String movieCategory,String startTime,String howLong,
+                               String endTime,String Hall,String minimumAge,String picture,String typeOfScreen,String date){
+         */
         addBut.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                //Main.connect.addMovieToBase();
-                System.out.println("eeeeeeeeee");
+                String date = String.valueOf(chooseDate.getValue());
+                date.replace("/","-");
+                try{
+                Main.connect.addMovieToBase("8",nameOfMovie.getText(),category.getText(),timeStart.getText(),howLong.getText(),timeEnd.getText(),hall.getText(),minAge.getText(),choosePicture.getText(),typeOfSound.getText(),date);
+                }catch (Exception e){
+                    System.out.println("Nie dziala");
+                }
                 }
         });
-        family.setOnAction(new EventHandler<ActionEvent>() {
+
+        lector.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                System.out.println("eeeeeeeeee");
-                //Main.connect.addMovieToBase();
+                typeOfSound.setText(lector.getText());
             }
         });
 
+        dubbing.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                typeOfSound.setText(dubbing.getText());
+            }
+        });
+
+        comedy.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                category.setText(comedy.getText());
+            }
+        });
+
+        drama.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                category.setText(drama.getText());
+            }
+        });
+
+        thriller.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                category.setText(thriller.getText());
+            }
+        });
+
+        horror.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                category.setText(horror.getText());
+            }
+        });
+
+        animation.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                category.setText(animation.getText());
+            }
+        });
+
+        musical.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                category.setText(musical.getText());
+            }
+        });
+
+        family.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                category.setText(family.getText());
+            }
+        });
+
+        action.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                category.setText(action.getText());
+            }
+        });
+
+
+
     }
+
 
 }

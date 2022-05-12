@@ -171,9 +171,9 @@ public class Connect {
 
 
 
-    public void addMovieToBase(int idMovie,String nameOfMovie,
-                               String movieCategory,String startTime,int howLong,
-                               String endTime,String Hall,int minimumAge,String picture,String typeOfScreen,String date){
+    public void addMovieToBase(String idMovie,String nameOfMovie,
+                               String movieCategory,String startTime,String howLong,
+                               String endTime,String Hall,String minimumAge,String picture,String typeOfScreen,String date){
         //to test
         /*
         	EXAMPLE
@@ -194,7 +194,7 @@ public class Connect {
                     ',' + "\'" + endTime + "\'"  + ',' +  "\'" + Hall + "\'"  + ',' + minimumAge + ',' +  "\'" + picture + "\'"  +','+  "\'" + typeOfScreen + "\'"  + ',' +  "\'" + date + "\'" +  ')';
 
             stmt.executeUpdate(sql);
-            System.out.println("Created table in given database...");
+            System.out.println("Added to datebase");
         } catch (SQLException e) {
             e.printStackTrace();
         }
