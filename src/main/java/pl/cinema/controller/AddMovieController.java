@@ -68,7 +68,7 @@ public class AddMovieController {
                 String date = String.valueOf(chooseDate.getValue());
                 date.replace("/","-");
                 try{
-                Main.connect.addMovieToBase("8",nameOfMovie.getText(),category.getText(),timeStart.getText(),howLong.getText(),timeEnd.getText(),hall.getText(),minAge.getText(),choosePicture.getText(),typeOfSound.getText(),date);
+                Main.connect.addMovieToBase("10",nameOfMovie.getText(),category.getText(),timeStart.getText(),howLong.getText(),timeEnd.getText(),hall.getText(),minAge.getText(),choosePicture.getText(),typeOfSound.getText(),date);
                 }catch (Exception e){
                     System.out.println("Nie dziala");
                 }

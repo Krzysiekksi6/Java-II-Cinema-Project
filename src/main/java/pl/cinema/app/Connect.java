@@ -10,11 +10,16 @@ import javafx.util.Callback;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 //Connection module-info tam szukać jakby coś nie działało
 
 public class Connect {
+
+    public ArrayList<ArrayList<String>> movies = new ArrayList<>();
+
+    public ArrayList<String> moviesTimeStart = new ArrayList<>();
 
     public static String passwd=null;
 
@@ -97,6 +102,52 @@ public class Connect {
 
 
     }
+
+    public void queryMovies(String data) throws SQLException {
+                Statement stmt = connection.createStatement();
+                query = "SELECT * FROM roznosci.bazafilmow " +
+                        "WHERE data_filmu::varchar LIKE " + "\'"+ data + "%" + "\';";
+                ResultSet rs = stmt.executeQuery(query);
+                while (rs.next()) {
+                    ArrayList<String> movie = new ArrayList<>();
+                    String id_filmu = rs.getString("id_filmu");
+                    String nazwa_filmu = rs.getString("nazwa_filmu");
+                    String kategoria_filmu = rs.getString("kategoria_filmu");
+                    String data_filmu = rs.getString("data_filmu");
+                    String godzina_rozpoczecia  = rs.getString("godzina_rozpoczecia");
+                    String czas_trwania_minuty = rs.getString("czas_trwania_minuty");
+                    String godzina_zakonczenia = rs.getString("godzina_zakonczenia");
+                    String sala = rs.getString("sala");
+                    String min_wiek = rs.getString("min_wiek");
+                    String obraz_filmu = rs.getString("obraz_filmu");
+                    String forma_dzwieku = rs.getString("forma_dzwieku");
+                    movie.add(id_filmu);
+                    movie.add(nazwa_filmu);
+                    movie.add(kategoria_filmu);
+                    movie.add(data_filmu);
+                    movie.add(godzina_rozpoczecia);
+                    movie.add(czas_trwania_minuty);
+                    movie.add(godzina_zakonczenia);
+                    movie.add(sala);
+                    movie.add(min_wiek);
+                    movie.add(obraz_filmu);
+                    movie.add(forma_dzwieku);
+                    movies.add(movie);
+                }
+        }
+
+    public void queryGetTime(String movieName) throws SQLException {
+        Statement stmt = connection.createStatement();
+        query = "SELECT godzina_rozpoczecia FROM roznosci.bazafilmow " +
+                "WHERE nazwa_filmu LIKE " + "\'"+ movieName + "%" + "\';";
+        ResultSet rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            String godzina_rozpoczecia  = rs.getString("godzina_rozpoczecia");
+            moviesTimeStart.add(godzina_rozpoczecia);
+        }
+
+    }
+
 
     public void getTables() throws SQLException {
         DatabaseMetaData metaData = connection.getMetaData();
