@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * The main class for our cinema booking management application
@@ -91,6 +92,11 @@ public class Main extends Application {
      */
     public static void main(String[] args) {
         //System.out.println("Main");
+        try {
+            System.out.println(connect.idGenerator());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         launch(args);
     }
 

@@ -5,7 +5,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Rectangle;
 import pl.cinema.app.Main;
 
 import java.io.IOException;
@@ -16,6 +21,150 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ReservationPaneController {
+    @FXML
+    Label lZeroZero;
+    @FXML
+    Label lZeroOne;
+    @FXML
+    Label lZeroTwo;
+    @FXML
+    Label lZeroThree;
+    @FXML
+    Label lZeroFour;
+    @FXML
+    Label lZeroFive;
+    @FXML
+    Label lOneZero;
+    @FXML
+    Label lOneTwo;
+    @FXML
+    Label lOneThree;
+    @FXML
+    Label lOneFour;
+    @FXML
+    Label lOneFive;
+    @FXML
+    Label lTwoZero;
+    @FXML
+    Label lTwoOne;
+    @FXML
+    Label lTwoThree;
+    @FXML
+    Label lTwoFour;
+    @FXML
+    Label lTwoFive;
+    @FXML
+    Label lThreeZero;
+    @FXML
+    Label lThreeOne;
+    @FXML
+    Label lThreeTwo;
+    @FXML
+    Label lThreeThree;
+    @FXML
+    Label lThreeFour;
+    @FXML
+    Label lThreeFive;
+    @FXML
+    Label lFourZero;
+    @FXML
+    Label lFourOne;
+    @FXML
+    Label lFourTwo;
+    @FXML
+    Label lFourThree;
+    @FXML
+    Label lFourFour;
+    @FXML
+    Label lFourFive;
+    @FXML
+    Label lFiveZero;
+    @FXML
+    Label lFiveOne;
+    @FXML
+    Label lFiveTwo;
+    @FXML
+    Label lFiveThree;
+    @FXML
+    Label lFiveFour;
+    @FXML
+    Label lFiveFive;
+    @FXML
+    Rectangle rZeroZero;
+    @FXML
+    Rectangle rZeroOne;
+    @FXML
+    Rectangle rZeroTwo;
+    @FXML
+    Rectangle rZeroThree;
+    @FXML
+    Rectangle rZeroFour;
+    @FXML
+    Rectangle rZeroFive;
+    @FXML
+    Rectangle rOneZero;
+    @FXML
+    Rectangle rOneOne;
+    @FXML
+    Rectangle rOneTwo;
+    @FXML
+    Rectangle rOneThree;
+    @FXML
+    Rectangle rOneFour;
+    @FXML
+    Rectangle rOneFive;
+    @FXML
+    Rectangle rTwoZero;
+    @FXML
+    Rectangle rTwoOne;
+    @FXML
+    Rectangle rTwoTwo;
+    @FXML
+    Rectangle rTwoThree;
+    @FXML
+    Rectangle rTwoFour;
+    @FXML
+    Rectangle rTwoFive;
+    @FXML
+    Rectangle rThreeZero;
+    @FXML
+    Rectangle rThreeOne;
+    @FXML
+    Rectangle rThreeTwo;
+    @FXML
+    Rectangle rThreeThree;
+    @FXML
+    Rectangle rThreeFour;
+    @FXML
+    Rectangle rThreeFive;
+    @FXML
+    Rectangle rFourZero;
+    @FXML
+    Rectangle rFourOne;
+    @FXML
+    Rectangle rFourTwo;
+    @FXML
+    Rectangle rFourThree;
+    @FXML
+    Rectangle rFourFour;
+    @FXML
+    Rectangle rFourFive;
+    @FXML
+    Rectangle rFiveZero;
+    @FXML
+    Rectangle rFiveOne;
+    @FXML
+    Rectangle rFiveTwo;
+    @FXML
+    Rectangle rFiveThree;
+    @FXML
+    Rectangle rFiveFour;
+    @FXML
+    Rectangle rFiveFive;
+
+    @FXML
+    private GridPane gridPane;
+
     @FXML
     private Button backButton;
 
@@ -60,6 +209,22 @@ public class ReservationPaneController {
                 }
             }
         });
+        backButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    Main.setRoot("mainPane");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        lZeroZero.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setFree(rZeroZero,lZeroZero);
+            }
+        });
 
 
     }
@@ -93,5 +258,28 @@ public class ReservationPaneController {
         }
 
     }
+
+    @FXML
+    public void setColor(){
+
+    }
+
+
+
+    @FXML
+    public void test(){
+        System.out.println("e");
+    }
+
+    @FXML
+    public void test2(){
+        System.out.println("e");
+    }
+    @FXML
+    public void setFree(Rectangle r,Label l){
+        r.setFill(Color.GREEN);
+        l.setText("FREE");
+    }
+
 
 }

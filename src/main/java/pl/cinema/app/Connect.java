@@ -138,12 +138,14 @@ public class Connect {
 
     public void queryGetTime(String movieName) throws SQLException {
         Statement stmt = connection.createStatement();
-        query = "SELECT godzina_rozpoczecia FROM roznosci.bazafilmow " +
+        query = "SELECT id_filmu,godzina_rozpoczecia FROM roznosci.bazafilmow " +
                 "WHERE nazwa_filmu LIKE " + "\'"+ movieName + "%" + "\';";
         ResultSet rs = stmt.executeQuery(query);
         while (rs.next()) {
+            String id = rs.getString("id_filmu");
             String godzina_rozpoczecia  = rs.getString("godzina_rozpoczecia");
-            moviesTimeStart.add(godzina_rozpoczecia);
+            String added = id +'.'+ godzina_rozpoczecia;
+            moviesTimeStart.add(added);
         }
 
     }
@@ -261,5 +263,34 @@ public class Connect {
 
     public String getQueryPrice() {
         return queryPrice;
+    }
+
+    public String idGenerator() throws SQLException {
+        Statement statement = connection.createStatement();
+
+        String query = "SELECT id_filmu FROM roznosci.bazafilmow";
+        ResultSet rs = statement.executeQuery(query);
+        String id = new String();
+        ArrayList<String> ids = new ArrayList<>();
+
+        while(rs.next()){
+            id = rs.getString("id_filmu");
+            ids.add(id);
+        }
+        id = "0";
+        for(int i=1;i>0;i++) {
+            boolean a = false;
+            for (String idCheck : ids) {
+                if (idCheck.contains(String.valueOf(i))){
+                    a = true;
+                }
+            }
+            if(a == false){
+                id = String.valueOf(i);
+                break;
+            }
+        }
+
+        return id;
     }
 }
