@@ -36,6 +36,8 @@ public class ReservationPaneController {
     @FXML
     Label lOneZero;
     @FXML
+    Label lOneOne;
+    @FXML
     Label lOneTwo;
     @FXML
     Label lOneThree;
@@ -47,6 +49,8 @@ public class ReservationPaneController {
     Label lTwoZero;
     @FXML
     Label lTwoOne;
+    @FXML
+    Label lTwoTwo;
     @FXML
     Label lTwoThree;
     @FXML
@@ -222,9 +226,222 @@ public class ReservationPaneController {
         lZeroZero.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                setFree(rZeroZero,lZeroZero);
+                setSelected(rZeroZero,lZeroZero);
             }
         });
+        lZeroOne.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rZeroOne,lZeroOne);
+            }
+        });
+        lZeroTwo.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rZeroTwo,lZeroTwo);
+            }
+        });
+        lZeroThree.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rZeroThree,lZeroThree);
+            }
+        });
+        lZeroFour.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rZeroFour,lZeroFour);
+            }
+        });
+        lZeroFive.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rZeroFive,lZeroFive);
+            }
+        });
+        lOneZero.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rOneZero,lOneZero);
+            }
+        });
+        lOneOne.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rOneOne,lOneOne);
+            }
+        });
+        lOneTwo.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rOneTwo,lOneTwo);
+            }
+        });
+        lOneThree.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rOneThree,lOneThree);
+            }
+        });
+        lOneFour.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rOneFour,lOneFour);
+            }
+        });
+        lOneFive.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rOneFive,lOneFive);
+            }
+        });
+        lTwoZero.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rTwoZero,lTwoZero);
+            }
+        });
+        lTwoOne.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rTwoOne,lTwoOne);
+            }
+        });
+        lTwoThree.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rTwoThree,lTwoThree);
+            }
+        });
+        lTwoFour.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rTwoFour,lTwoFour);
+            }
+        });
+        lTwoFive.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rTwoFive,lTwoFive);
+            }
+        });
+        lThreeZero.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rThreeZero,lThreeZero);
+            }
+        });
+        lThreeOne.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rThreeOne,lThreeOne);
+            }
+        });
+        lThreeTwo.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rThreeTwo,lThreeTwo);
+            }
+        });
+        lThreeThree.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rThreeThree,lThreeThree);
+            }
+        });
+        lThreeFour.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rThreeFour,lThreeFour);
+            }
+        });
+        lThreeFive.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rThreeFive,lThreeFive);
+            }
+        });
+        lFourZero.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rFourZero,lFourZero);
+            }
+        });
+        lFourOne.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rFourOne,lFourOne);
+            }
+        });
+        lFourTwo.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rFourTwo,lFourTwo);
+            }
+        });
+        lFourThree.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rFourThree,lFourThree);
+            }
+        });
+        lFourFour.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rFourFour,lFourFour);
+            }
+        });
+        lFourFive.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rFourFive,lFourFive);
+            }
+        });
+        lFiveZero.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rFiveZero,lFiveZero);
+            }
+        });
+        lFiveOne.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rFiveOne,lFiveOne);
+            }
+        });
+        lFiveTwo.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rFiveTwo,lFiveTwo);
+            }
+        });
+        lFiveThree.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rFiveThree,lFiveThree);
+            }
+        });
+        lFiveFour.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rFiveFour,lFiveFour);
+            }
+        });
+        lFiveFive.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rFiveFive,lFiveFive);
+            }
+        });
+        lTwoTwo.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setSelected(rTwoTwo,lTwoTwo);
+            }
+        });
+
+
+
 
 
     }
@@ -279,6 +496,10 @@ public class ReservationPaneController {
     public void setFree(Rectangle r,Label l){
         r.setFill(Color.GREEN);
         l.setText("FREE");
+    }
+    public void setSelected(Rectangle r,Label l){
+        r.setFill(Color.BLUE);
+        l.setText("Selected");
     }
 
 

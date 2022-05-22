@@ -1,0 +1,226 @@
+@startuml
+
+title __CONTROLLER's Class Diagram__\n
+
+  namespace  {
+    namespace l.cinema.controller {
+      class pl.cinema.controller.AddMovieController {
+          ~ action : MenuItem
+          ~ addBut : Button
+          ~ animation : MenuItem
+          ~ category : MenuButton
+          ~ chooseDate : DatePicker
+          ~ choosePicture : TextField
+          ~ comedy : MenuItem
+          ~ drama : MenuItem
+          ~ dubbing : MenuItem
+          ~ family : MenuItem
+          ~ hall : TextField
+          ~ horror : MenuItem
+          ~ howLong : TextField
+          ~ lector : MenuItem
+          ~ minAge : TextField
+          ~ musical : MenuItem
+          ~ nameOfMovie : TextField
+          ~ sub : MenuItem
+          ~ thriller : MenuItem
+          ~ timeEnd : TextField
+          ~ timeStart : TextField
+          ~ typeOfSound : MenuButton
+          + initialize()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace l.cinema.controller {
+      class pl.cinema.controller.ChefPaneController {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace l.cinema.controller {
+      class pl.cinema.controller.CinemaDescriptionPaneController {
+          - backButton : Button
+          + initialize()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace l.cinema.controller {
+      class pl.cinema.controller.ClientDataPaneController {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace l.cinema.controller {
+      class pl.cinema.controller.EmployeePaneController {
+          ~ addMovieButton : Button
+          + initialize()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace l.cinema.controller {
+      class pl.cinema.controller.LoginPaneController {
+          - backButton : Button
+          - logInButton : Button
+          - passwordBox : PasswordField
+          - toastLabel : Label
+          - usernameBox : TextField
+          + initialize()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace l.cinema.controller {
+      class pl.cinema.controller.MainPaneController {
+          ~ stage : Stage
+          - cinemaButton : Button
+          - cinemaLabel : Label
+          - loginButton : Button
+          - priceButton : Button
+          - repertorieButton : Button
+          - reservationButton : Button
+          + initialize()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace l.cinema.controller {
+      class pl.cinema.controller.PricePaneController {
+          - tableViewPrice : TableView
+          + initialize()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace l.cinema.controller {
+      class pl.cinema.controller.RepertoirePaneController {
+          - backButton : Button
+          + initialize()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace l.cinema.controller {
+      class pl.cinema.controller.ReservationPaneController {
+          ~ lFiveFive : Label
+          ~ lFiveFour : Label
+          ~ lFiveOne : Label
+          ~ lFiveThree : Label
+          ~ lFiveTwo : Label
+          ~ lFiveZero : Label
+          ~ lFourFive : Label
+          ~ lFourFour : Label
+          ~ lFourOne : Label
+          ~ lFourThree : Label
+          ~ lFourTwo : Label
+          ~ lFourZero : Label
+          ~ lOneFive : Label
+          ~ lOneFour : Label
+          ~ lOneOne : Label
+          ~ lOneThree : Label
+          ~ lOneTwo : Label
+          ~ lOneZero : Label
+          ~ lThreeFive : Label
+          ~ lThreeFour : Label
+          ~ lThreeOne : Label
+          ~ lThreeThree : Label
+          ~ lThreeTwo : Label
+          ~ lThreeZero : Label
+          ~ lTwoFive : Label
+          ~ lTwoFour : Label
+          ~ lTwoOne : Label
+          ~ lTwoThree : Label
+          ~ lTwoTwo : Label
+          ~ lTwoZero : Label
+          ~ lZeroFive : Label
+          ~ lZeroFour : Label
+          ~ lZeroOne : Label
+          ~ lZeroThree : Label
+          ~ lZeroTwo : Label
+          ~ lZeroZero : Label
+          ~ rFiveFive : Rectangle
+          ~ rFiveFour : Rectangle
+          ~ rFiveOne : Rectangle
+          ~ rFiveThree : Rectangle
+          ~ rFiveTwo : Rectangle
+          ~ rFiveZero : Rectangle
+          ~ rFourFive : Rectangle
+          ~ rFourFour : Rectangle
+          ~ rFourOne : Rectangle
+          ~ rFourThree : Rectangle
+          ~ rFourTwo : Rectangle
+          ~ rFourZero : Rectangle
+          ~ rOneFive : Rectangle
+          ~ rOneFour : Rectangle
+          ~ rOneOne : Rectangle
+          ~ rOneThree : Rectangle
+          ~ rOneTwo : Rectangle
+          ~ rOneZero : Rectangle
+          ~ rThreeFive : Rectangle
+          ~ rThreeFour : Rectangle
+          ~ rThreeOne : Rectangle
+          ~ rThreeThree : Rectangle
+          ~ rThreeTwo : Rectangle
+          ~ rThreeZero : Rectangle
+          ~ rTwoFive : Rectangle
+          ~ rTwoFour : Rectangle
+          ~ rTwoOne : Rectangle
+          ~ rTwoThree : Rectangle
+          ~ rTwoTwo : Rectangle
+          ~ rTwoZero : Rectangle
+          ~ rZeroFive : Rectangle
+          ~ rZeroFour : Rectangle
+          ~ rZeroOne : Rectangle
+          ~ rZeroThree : Rectangle
+          ~ rZeroTwo : Rectangle
+          ~ rZeroZero : Rectangle
+          - backButton : Button
+          - chooseMovie : MenuButton
+          - chooseTime : MenuButton
+          - dataLabel : Label
+          - datePicker : DatePicker
+          - gridPane : GridPane
+          - reservationButton : Button
+          + getDate()
+          + initialize()
+          + menuButtonItems()
+          + setColor()
+          + setFree()
+          + setSelected()
+          + test()
+          + test2()
+      }
+    }
+  }
+  
+
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
