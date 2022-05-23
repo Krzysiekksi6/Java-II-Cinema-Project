@@ -187,6 +187,11 @@ public class ReservationPaneController {
     @FXML
     private MenuButton chooseTime;
 
+    ArrayList<String> data = new ArrayList<>();
+    ArrayList<ArrayList<String>> dataToReserve = new ArrayList<>();
+
+    ArrayList<String> idMovie = new ArrayList<>();
+
     /**
      * Zeby nie wywalało Null Pointer Exception trzeba pobierac dane podobnie jak tutaj nizej getDate i nadać metode
      * getDate na onAction w Scene Builder
@@ -198,7 +203,7 @@ public class ReservationPaneController {
         dataLabel.setText(myFormattedDate);
         Main.connect.queryMovies("2020-10-12");
         dataLabel.getText();
-        System.out.println(Main.connect.movies.get(1));
+       //System.out.println(Main.connect.movies.get(1));
         menuButtonItems();
     }
 
@@ -456,11 +461,36 @@ public class ReservationPaneController {
                 }
                 EventHandler<ActionEvent> event2 = new EventHandler<ActionEvent>() {
                     public void handle(ActionEvent e) {
-                        chooseTime.setText(((MenuItem) e.getSource()).getText());
+                        data.clear();
+                        String beforeSplit =  (((MenuItem) e.getSource()).getText());
+                        String[] afterSplit = beforeSplit.split("\\.");
+                        chooseTime.setText(afterSplit[1]);
+                        //String[] afterSplit = ((MenuItem) e.getSource()).getText().split(".");
+                        //chooseTime.setText(afterSplit[0]);
+                        //String[] splliting = getter.split(".");
+                        //chooseTime.setText(splliting[1]);
+
+                        data.add(String.valueOf(datePicker.getValue()));
+
+                        int id = Integer.parseInt(afterSplit[0]);
+
+                        --id;
+
+                        data.add(idMovie.get(id));
+
+                        data.add(chooseMovie.getText());
+
+                        data.add(chooseTime.getText());
+
+                        System.out.println(data);
+
                     }
                 };
                 for (int i = 0; i < Main.connect.moviesTimeStart.size(); i++) {
-                    MenuItem menuItem2 = new MenuItem(Main.connect.moviesTimeStart.get(i));
+                    String beforeSplit = Main.connect.moviesTimeStart.get(i);
+                    String[] afterSplit = beforeSplit.split("\\.");
+                    MenuItem menuItem2 = new MenuItem(String.valueOf(i+1) + "." + afterSplit[1]);
+                    idMovie.add(afterSplit[0]);
                     menuItem2.setOnAction(event2);
                     chooseTime.getItems().add(menuItem2);
                 }
@@ -500,6 +530,37 @@ public class ReservationPaneController {
     public void setSelected(Rectangle r,Label l){
         r.setFill(Color.BLUE);
         l.setText("Selected");
+
+        String labelID = l.getId();
+
+        labelID = labelID.substring(1);
+
+        int flag = 0;
+        String[] rowAndColumn  = new String[2];
+
+        for(int i=0;i<labelID.length();i++){
+            if(Character.isUpperCase(labelID.charAt(i))){
+                flag++;
+                if(flag > 1){
+                    rowAndColumn[0]= labelID.substring(0,i);
+                    rowAndColumn[1] = labelID.substring(i);
+                }
+            }
+        }
+
+        data.add(rowAndColumn[0]);
+        data.add(rowAndColumn[1]);
+
+        System.out.println(data);
+
+        dataToReserve.add((ArrayList<String>) data.clone());
+
+        data.remove(5);
+        data.remove(4);
+
+        System.out.println(dataToReserve);
+        System.out.println(dataToReserve.size());
+        System.out.println(rowAndColumn[0] + "," + rowAndColumn[1]);
     }
 
 

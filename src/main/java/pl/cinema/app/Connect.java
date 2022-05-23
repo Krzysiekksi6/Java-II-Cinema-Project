@@ -4,8 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.util.Callback;
 
 import java.sql.*;
@@ -293,4 +292,10 @@ public class Connect {
 
         return id;
     }
+    public void reserveSeat(ArrayList<String> data, Label l){
+        String id = l.getText();
+
+    }
+
+
 }
