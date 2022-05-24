@@ -4,15 +4,19 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 import pl.cinema.app.Main;
 
+import javax.mail.search.SearchTerm;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -21,6 +25,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ReservationPaneController {
+
+    static int howManyTickets = 0;
+
     @FXML
     Label lZeroZero;
     @FXML
@@ -167,6 +174,9 @@ public class ReservationPaneController {
     Rectangle rFiveFive;
 
     @FXML
+    AnchorPane archonPaneReser;
+
+    @FXML
     private GridPane gridPane;
 
     @FXML
@@ -188,7 +198,10 @@ public class ReservationPaneController {
     private MenuButton chooseTime;
 
     ArrayList<String> data = new ArrayList<>();
-    ArrayList<ArrayList<String>> dataToReserve = new ArrayList<>();
+
+    static ArrayList<ArrayList<String>> dataToReserve = new ArrayList<>();
+
+    static String nameOfMovie;
 
     ArrayList<String> idMovie = new ArrayList<>();
 
@@ -218,6 +231,40 @@ public class ReservationPaneController {
                 }
             }
         });
+        setFreeSeats();
+        reservationButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+
+                howManyTickets = dataToReserve.size();
+                nameOfMovie = chooseMovie.getText();
+                //try {
+                 //   Main.connect.addReservationToBase(Main.connect.idGeneratorReservation(),dataToReserve.get(0).get(1),"eee","998","EEEEE");
+                //} catch (SQLException e) {
+                //    e.printStackTrace();
+               // }
+                String[] a = new String[0];
+                try {
+                    a = Main.connect.findById("1");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Arrays.toString(a));
+                Stage stage = new Stage();
+                FXMLLoader fxmlLoader = new FXMLLoader(CompleteOrderController.class.getResource("/fxml/completeOrder.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(fxmlLoader.load(),651,322);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                stage.setTitle("Add movie");
+                stage.setResizable(false);
+                stage.setScene(scene);
+                stage.show();
+            }
+        });
+
         backButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -482,6 +529,8 @@ public class ReservationPaneController {
 
                         data.add(chooseTime.getText());
 
+                        archonPaneReser.setVisible(true);
+
                         System.out.println(data);
 
                     }
@@ -561,6 +610,50 @@ public class ReservationPaneController {
         System.out.println(dataToReserve);
         System.out.println(dataToReserve.size());
         System.out.println(rowAndColumn[0] + "," + rowAndColumn[1]);
+    }
+
+    public void setFreeSeats(){
+        setFree(rZeroZero,lZeroZero);
+        setFree(rZeroOne,lZeroOne);
+        setFree(rZeroTwo,lZeroTwo);
+        setFree(rZeroThree,lZeroThree);
+        setFree(rZeroFour,lZeroFour);
+        setFree(rZeroFive,lZeroFive);
+        setFree(rOneZero,lOneZero);
+        setFree(rOneOne,lOneOne);
+        setFree(rOneTwo,lOneTwo);
+        setFree(rOneThree,lOneThree);
+        setFree(rOneFour,lOneFour);
+        setFree(rOneFive,lOneFive);
+        setFree(rTwoZero,lTwoZero);
+        setFree(rTwoOne,lTwoOne);
+        setFree(rTwoTwo,lTwoTwo);
+        setFree(rTwoThree,lTwoThree);
+        setFree(rTwoFour,lTwoFour);
+        setFree(rTwoFive,lTwoFive);
+        setFree(rThreeZero,lThreeZero);
+        setFree(rThreeOne,lThreeOne);
+        setFree(rThreeTwo,lThreeTwo);
+        setFree(rThreeThree,lThreeThree);
+        setFree(rThreeFour,lThreeFour);
+        setFree(rThreeFive,lThreeFive);
+        setFree(rFourZero,lFourZero);
+        setFree(rFourOne,lFourOne);
+        setFree(rFourTwo,lFourTwo);
+        setFree(rFourThree,lFourThree);
+        setFree(rFourFour,lFourFour);
+        setFree(rFourFive,lFourFive);
+        setFree(rFiveZero,lFiveZero);
+        setFree(rFiveOne,lFiveOne);
+        setFree(rFiveTwo,lFiveTwo);
+        setFree(rFiveThree,lFiveThree);
+        setFree(rFiveFour,lFiveFour);
+        setFree(rFiveFive,lFiveFive);
+
+
+
+
+
     }
 
 

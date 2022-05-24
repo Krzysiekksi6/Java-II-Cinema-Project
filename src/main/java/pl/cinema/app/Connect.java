@@ -297,5 +297,139 @@ public class Connect {
 
     }
 
+    public String idGeneratorReservation() throws SQLException {
+        Statement statement = connection.createStatement();
+
+        String query = "SELECT id_rezerwacji FROM roznosci.rezerwacje2";
+        ResultSet rs = statement.executeQuery(query);
+        String id = new String();
+        ArrayList<String> ids = new ArrayList<>();
+
+        while(rs.next()){
+            id = rs.getString("id_rezerwacji");
+            ids.add(id);
+        }
+        id = "0";
+        for(int i=1;i>0;i++) {
+            boolean a = false;
+            for (String idCheck : ids) {
+                if (idCheck.contains(String.valueOf(i))){
+                    a = true;
+                }
+            }
+            if(a == false){
+                id = String.valueOf(i);
+                break;
+            }
+        }
+
+        return id;
+    }
+    /*
+    public void reserveSeat(ArrayList<String> data, Label l){
+        String id = l.getText();
+
+    }
+
+     */
+
+    public void addReservationToBase(String id_rezerwacji,String id_filmu,String status,String nr_telefonu,String miejsce){
+        //to test
+        /*
+        	EXAMPLE
+	INSERT INTO roznosci.bazafilmow
+	(id_filmu,nazwa_filmu,kategoria_filmu,godzina_rozpoczecia
+	 ,czas_trwania_minuty,godzina_zakonczenia,sala,min_wiek,obraz_filmu
+	 ,forma_dzwieku,data_filmu)
+	VALUES
+		(3,'Americano2','Action','14:20',120,'14:30','C2',17,null,'2d','17.10.2020');
+         */
+        try(Connection conn = DriverManager.getConnection(url, user, pass);
+        ) {
+            String sql = "INSERT INTO roznosci.rezerwacje2 " +
+                    "(id_rezerwacji,id_filmu,status,nr_telefonu,miejce) " +
+                    "VALUES" +
+                    '(' + id_rezerwacji + "," +  id_filmu  + ',' +  "\'" + status + "\'"  + ',' +  "\'" + nr_telefonu + "\'"  + ',' + "\'" + miejsce + "\'" + ')';
+
+            stmt.executeUpdate(sql);
+            System.out.println("Added to datebase");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String[] findById(String id) throws SQLException {
+        Statement stmt = connection.createStatement();
+        String[] movieInformation = new String[11];
+
+        query = "SELECT * FROM roznosci.bazafilmow " +
+                "WHERE id_filmu = " + id + ";";
+
+        ResultSet rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            ArrayList<String> movie = new ArrayList<>();
+            String id_filmu = rs.getString("id_filmu");
+            String nazwa_filmu = rs.getString("nazwa_filmu");
+            String kategoria_filmu = rs.getString("kategoria_filmu");
+            String data_filmu = rs.getString("data_filmu");
+            String godzina_rozpoczecia  = rs.getString("godzina_rozpoczecia");
+            String czas_trwania_minuty = rs.getString("czas_trwania_minuty");
+            String godzina_zakonczenia = rs.getString("godzina_zakonczenia");
+            String sala = rs.getString("sala");
+            String min_wiek = rs.getString("min_wiek");
+            String obraz_filmu = rs.getString("obraz_filmu");
+            String forma_dzwieku = rs.getString("forma_dzwieku");
+            movieInformation[0] = id_filmu;
+            movieInformation[1] =nazwa_filmu;
+            movieInformation[2] =kategoria_filmu;
+            movieInformation[3] =data_filmu;
+            movieInformation[4] =godzina_rozpoczecia;
+            movieInformation[5] =czas_trwania_minuty;
+            movieInformation[6] =godzina_zakonczenia;
+            movieInformation[7] =sala;
+            movieInformation[8] =min_wiek;
+            movieInformation[9] =obraz_filmu;
+            movieInformation[10] =forma_dzwieku;
+        }
+        return movieInformation;
+    }
+
+    public String[] findByIdReservation(String id) throws SQLException {
+        Statement stmt = connection.createStatement();
+        String[] movieInformation = new String[11];
+
+        query = "SELECT * FROM roznosci.bazafilmow " +
+                "WHERE id_filmu = " + id + ";";
+
+        ResultSet rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            ArrayList<String> movie = new ArrayList<>();
+            String id_filmu = rs.getString("id_filmu");
+            String nazwa_filmu = rs.getString("nazwa_filmu");
+            String kategoria_filmu = rs.getString("kategoria_filmu");
+            String data_filmu = rs.getString("data_filmu");
+            String godzina_rozpoczecia  = rs.getString("godzina_rozpoczecia");
+            String czas_trwania_minuty = rs.getString("czas_trwania_minuty");
+            String godzina_zakonczenia = rs.getString("godzina_zakonczenia");
+            String sala = rs.getString("sala");
+            String min_wiek = rs.getString("min_wiek");
+            String obraz_filmu = rs.getString("obraz_filmu");
+            String forma_dzwieku = rs.getString("forma_dzwieku");
+            movieInformation[0] = id_filmu;
+            movieInformation[1] =nazwa_filmu;
+            movieInformation[2] =kategoria_filmu;
+            movieInformation[3] =data_filmu;
+            movieInformation[4] =godzina_rozpoczecia;
+            movieInformation[5] =czas_trwania_minuty;
+            movieInformation[6] =godzina_zakonczenia;
+            movieInformation[7] =sala;
+            movieInformation[8] =min_wiek;
+            movieInformation[9] =obraz_filmu;
+            movieInformation[10] =forma_dzwieku;
+        }
+        return movieInformation;
+    }
 
 }
+
+

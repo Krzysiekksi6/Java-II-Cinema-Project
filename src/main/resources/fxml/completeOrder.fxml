@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="322.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.CompleteOrderController">
+   <children>
+      <Label alignment="CENTER" layoutX="193.0" layoutY="14.0" prefHeight="36.0" prefWidth="266.0" text="Complete your order">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="a" layoutX="25.0" layoutY="63.0" prefHeight="17.0" prefWidth="98.0" text="Amout of tickets:" />
+      <Label fx:id="amountOFTikckets" layoutX="123.0" layoutY="63.0" prefHeight="17.0" prefWidth="19.0" />
+      <Label fx:id="a1" layoutX="25.0" layoutY="90.0" prefHeight="17.0" prefWidth="40.0" text="Seats:" />
+      <Label fx:id="a2" layoutX="228.0" layoutY="63.0" prefHeight="17.0" prefWidth="92.0" text="Name of movie:" />
+      <Button fx:id="completeButton" layoutX="267.0" layoutY="271.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="END" />
+      <Label fx:id="seats" layoutX="60.0" layoutY="90.0" prefHeight="17.0" prefWidth="78.0" />
+      <Label fx:id="nameOfMovieLabel" layoutX="316.0" layoutY="63.0" prefHeight="17.0" prefWidth="78.0" />
+      <Label fx:id="amountOFTikckets3" layoutX="231.0" layoutY="90.0" prefHeight="17.0" prefWidth="67.0" text="Time start:" />
+      <Label fx:id="timeStarts" layoutX="298.0" layoutY="90.0" prefHeight="17.0" prefWidth="78.0" />
+      <TextField fx:id="phoneNumber" layoutX="481.0" layoutY="59.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Label layoutX="380.0" layoutY="63.0" prefHeight="17.0" prefWidth="92.0" text="Phone number" />
+   </children>
+</AnchorPane>
