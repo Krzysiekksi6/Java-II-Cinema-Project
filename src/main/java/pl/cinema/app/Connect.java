@@ -393,6 +393,27 @@ public class Connect {
         }
         return movieInformation;
     }
+    public String getByIdReservations(String id) throws SQLException {
+
+        Statement stmt = connection.createStatement();
+        String reservations = "";
+
+        query = "SELECT miejce FROM roznosci.rezerwacje2 " +
+                "WHERE id_filmu = " + id + ";";
+
+        ResultSet rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            String rsGet = rs.getString("miejce");
+            if(reservations.isEmpty())
+            reservations = rsGet;
+            else{
+                reservations = reservations + "," + rsGet;
+            }
+        }
+        return reservations;
+    }
+
+
 
     public String[] findByIdReservation(String id) throws SQLException {
         Statement stmt = connection.createStatement();

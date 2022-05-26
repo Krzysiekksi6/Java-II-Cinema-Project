@@ -125,7 +125,7 @@
                         <Label fx:id="lTwoZero" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="2" />
                         <Label fx:id="lThreeZero" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="3" />
                         <Label fx:id="lFourZero" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="4" />
-                        <Label fx:id="lFiveZero" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="5" />
+                        <Label fx:id="lZeroFive" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="5" />
                         <Label fx:id="lZeroOne" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.rowIndex="1" />
                         <Label fx:id="lOneOne" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="lTwoOne" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
@@ -150,7 +150,7 @@
                         <Label fx:id="lThreeFour" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
                         <Label fx:id="lFourFour" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                         <Label fx:id="lFiveFour" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                        <Label fx:id="lZeroFive" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.rowIndex="5" />
+                        <Label fx:id="lFiveZero" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.rowIndex="5" />
                         <Label fx:id="lOneFive" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Label fx:id="lTwoFive" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                         <Label fx:id="lThreeFive" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />

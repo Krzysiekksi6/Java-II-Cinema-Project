@@ -18,6 +18,7 @@ import pl.cinema.app.Main;
 
 import javax.mail.search.SearchTerm;
 import java.io.IOException;
+import java.sql.Array;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -27,6 +28,10 @@ import java.util.Arrays;
 public class ReservationPaneController {
 
     static int howManyTickets = 0;
+
+    boolean checkerForClearing = false;
+
+    String info;
 
     @FXML
     Label lZeroZero;
@@ -529,7 +534,22 @@ public class ReservationPaneController {
 
                         data.add(chooseTime.getText());
 
+                        info = idMovie.get(id);
+
+                        try {
+                            String[] reservations = Main.connect.getByIdReservations(idMovie.get(id)).split(",");
+                            System.out.println(Arrays.toString(reservations));
+                        } catch (SQLException ex) {
+                            throw new RuntimeException(ex);
+                        }
+
                         archonPaneReser.setVisible(true);
+
+                        try {
+                            setReservedSeats();
+                        } catch (SQLException ex) {
+                            throw new RuntimeException(ex);
+                        }
 
                         System.out.println(data);
 
@@ -542,10 +562,15 @@ public class ReservationPaneController {
                     idMovie.add(afterSplit[0]);
                     menuItem2.setOnAction(event2);
                     chooseTime.getItems().add(menuItem2);
+
                 }
-
-
+                if(checkerForClearing==true){
+                    chooseTime.getItems().clear();
+                }
+                checkerForClearing = true;
             }
+
+
         };
         for (int i = 0; i < Main.connect.movies.size(); i++) {
             MenuItem menuItem1 = new MenuItem(Main.connect.movies.get(i).get(1));
@@ -556,8 +581,9 @@ public class ReservationPaneController {
     }
 
     @FXML
-    public void setColor(){
-
+    public void setReserved(Rectangle r,Label l){
+        r.setFill(Color.RED);
+        l.setText("RESERVED");
     }
 
 
@@ -579,7 +605,6 @@ public class ReservationPaneController {
     public void setSelected(Rectangle r,Label l){
         r.setFill(Color.BLUE);
         l.setText("Selected");
-
         String labelID = l.getId();
 
         labelID = labelID.substring(1);
@@ -651,9 +676,54 @@ public class ReservationPaneController {
         setFree(rFiveFive,lFiveFive);
 
 
+    }
 
+    public void setReservedSeats() throws SQLException {
+        //rezerwacja na switach kolorująca przyciski w kurwe do roboty
+        //trzeba dla kazdego przypadku zrobic case i lecim dalej
+        //case zawiera zero,two -> recntagle.setColor,label.setText
+        String[] reservations = Main.connect.getByIdReservations(info).split(",");
+        for(int i=0;i<reservations.length-1;i++){
+            switch((reservations[i] + reservations[i+1])){
+            case "ZeroZero" -> setReserved(rZeroZero,lZeroZero);
+            case "ZeroOne" -> setReserved(rZeroOne,lZeroOne);
+            case "ZeroTwo" ->setReserved(rZeroTwo,lZeroTwo);
+            case "ZeroThree" ->setReserved(rZeroThree,lZeroThree);
+            case "ZeroFour" ->setReserved(rZeroFour,lZeroFour);
+            case "ZeroFive" ->setReserved(rZeroFive,lZeroFive);
+            case "OneZero"  -> setReserved(rOneZero,lOneZero);
+            case "OneOne" ->setReserved(rOneOne,lOneOne);
+            case "OneTwo"  -> setReserved(rOneTwo,lOneTwo);
+            case "OneThree" -> setReserved(rOneThree,lOneThree);
+            case "OneFour" -> setReserved(rOneFour,lOneFour);
+            case "OneFive" -> setReserved(rOneFive,lOneFive);
+            case "TwoZero" ->  setReserved(rTwoZero,lTwoZero);
+            case "TwoOne" ->  setReserved(rTwoOne,lTwoOne);
+            case "TwoTwo" ->  setReserved(rTwoTwo,lTwoTwo);
+            case "TwoThree" ->  setReserved(rTwoThree,lTwoThree);
+            case "TwoFour" ->  setReserved(rTwoFour,lTwoFour);
+            case "TwoFive" ->  setReserved(rTwoFive,lTwoFive);
+            case "ThreeZero" ->  setReserved(rThreeZero,lThreeZero);
+            case "ThreeOne" ->  setReserved(rThreeOne,lThreeOne);
+            case "ThreeTwo" ->  setReserved(rThreeTwo,lThreeTwo);
+            case "ThreeThree" ->  setReserved(rThreeThree,lThreeThree);
+            case "ThreeFour" ->  setReserved(rThreeFour,lThreeFour);
+            case "ThreeFive" ->  setReserved(rThreeFive,lThreeFive);
+            case "FourZero" ->  setReserved(rFourZero,lFourZero);
+            case "FourOne" ->  setReserved(rFourOne,lFourOne);
+            case "FourTwo" ->  setReserved(rFourTwo,lFourTwo);
+            case "FourThree" -> setReserved(rFourThree,lFourThree);
+            case "FourFour" -> setReserved(rFourFour,lFourFour);
+            case "FourFive" -> setReserved(rFourFive,lFourFive);
+            case "FiveZero" -> setReserved(rFiveZero,lFiveZero);
+            case "FiveOne" ->  setReserved(rFiveOne,lFiveOne);
+            case "FiveTwo" ->  setReserved(rFiveTwo,lFiveTwo);
+            case "FiveThree" -> setReserved(rFiveThree,lFiveThree);
+            case "FiveFour" ->  setReserved(rFiveFour,lFiveFour);
+            case "FiveFive" -> setReserved(rFiveFive,lFiveFive);
 
-
+            }
+        }
     }
 
 
