@@ -107,6 +107,7 @@ public class Connect {
                 query = "SELECT * FROM roznosci.bazafilmow " +
                         "WHERE data_filmu::varchar LIKE " + "\'"+ data + "%" + "\';";
                 ResultSet rs = stmt.executeQuery(query);
+                movies.clear();
                 while (rs.next()) {
                     ArrayList<String> movie = new ArrayList<>();
                     String id_filmu = rs.getString("id_filmu");
@@ -140,6 +141,7 @@ public class Connect {
         query = "SELECT id_filmu,godzina_rozpoczecia FROM roznosci.bazafilmow " +
                 "WHERE nazwa_filmu LIKE " + "\'"+ movieName + "%" + "\';";
         ResultSet rs = stmt.executeQuery(query);
+        moviesTimeStart.clear();
         while (rs.next()) {
             String id = rs.getString("id_filmu");
             String godzina_rozpoczecia  = rs.getString("godzina_rozpoczecia");

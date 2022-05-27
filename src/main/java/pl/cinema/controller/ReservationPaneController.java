@@ -544,6 +544,7 @@ public class ReservationPaneController {
                         }
 
                         archonPaneReser.setVisible(true);
+                        setFreeSeats();
 
                         try {
                             setReservedSeats();
@@ -555,6 +556,7 @@ public class ReservationPaneController {
 
                     }
                 };
+                chooseTime.getItems().clear();
                 for (int i = 0; i < Main.connect.moviesTimeStart.size(); i++) {
                     String beforeSplit = Main.connect.moviesTimeStart.get(i);
                     String[] afterSplit = beforeSplit.split("\\.");
@@ -562,21 +564,20 @@ public class ReservationPaneController {
                     idMovie.add(afterSplit[0]);
                     menuItem2.setOnAction(event2);
                     chooseTime.getItems().add(menuItem2);
+                }
+                System.out.println( Main.connect.moviesTimeStart.size());
 
-                }
-                if(checkerForClearing==true){
-                    chooseTime.getItems().clear();
-                }
-                checkerForClearing = true;
             }
 
 
         };
+        chooseMovie.getItems().clear();
         for (int i = 0; i < Main.connect.movies.size(); i++) {
             MenuItem menuItem1 = new MenuItem(Main.connect.movies.get(i).get(1));
             menuItem1.setOnAction(event1);
             chooseMovie.getItems().add(menuItem1);
         }
+        System.out.println(Main.connect.movies.size());
 
     }
 

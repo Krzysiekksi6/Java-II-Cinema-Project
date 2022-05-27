@@ -79,12 +79,22 @@ public class MainPaneController {
         repertorieButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                try {
-                    Main.setRoot("repertoirePane");
 
+                    Stage stage = new Stage();
+                    FXMLLoader fxmlLoader = new FXMLLoader(RepertoirePaneController.class.getResource("/fxml/repertoirePane.fxml"));
+                    Scene scene = null;
+                    scene.
+                try {
+                    scene = new Scene(fxmlLoader.load(),900,800);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                try {
+                    scene.setRoot(fxmlLoader.load());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
             }
         });
 
