@@ -60,7 +60,7 @@
             <MenuItem fx:id="dubbing" mnemonicParsing="false" text="Dubbing" />
          </items>
       </MenuButton>
-      <Button layoutX="356.0" layoutY="316.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Load image" />
+      <Button fx:id="loadImage" layoutX="356.0" layoutY="316.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Load image" />
       <Button layoutX="356.0" layoutY="250.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Check availability">
          <font>
             <Font size="11.0" />

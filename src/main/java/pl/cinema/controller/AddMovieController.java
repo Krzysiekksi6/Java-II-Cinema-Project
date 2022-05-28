@@ -4,12 +4,20 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import org.w3c.dom.Text;
 import pl.cinema.app.Main;
 
+import java.io.File;
 import java.io.IOException;
 
 public class AddMovieController {
+    @FXML
+    Button loadImage;
+    @FXML
+    AnchorPane ar;
     @FXML
     MenuButton typeOfSound;
     @FXML
@@ -73,6 +81,12 @@ public class AddMovieController {
                     System.out.println("Nie dziala");
                 }
                 }
+        });
+        loadImage.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                getTheUserFilePath();
+            }
         });
 
         lector.setOnAction(new EventHandler<ActionEvent>() {
@@ -149,5 +163,18 @@ public class AddMovieController {
 
     }
 
+    public void getTheUserFilePath() {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Upload File Path");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("IMAGE FILES", "*.jpg", "*.png", "*.gif")
+        );
+
+        Stage stage = new Stage();
+        File file = fileChooser.showOpenDialog(null);//tu tzrba
+        choosePicture.setText(file.getPath());
+
+    }
 
 }
