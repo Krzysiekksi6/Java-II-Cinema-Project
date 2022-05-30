@@ -3,9 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.EmployeePaneController">
+<AnchorPane maxHeight="701.0" maxWidth="913.0" minHeight="701.0" minWidth="913.0" prefHeight="701.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.EmployeePaneController">
    <children>
-      <Button fx:id="addMovieButton" layoutX="304.0" layoutY="75.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="192.0" text="Add movie" />
+      <Button fx:id="addMovieButton" layoutX="361.0" layoutY="301.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="192.0" text="Add movie" />
+      <Button fx:id="buttonBck" layoutX="797.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Back" />
    </children>
 </AnchorPane>

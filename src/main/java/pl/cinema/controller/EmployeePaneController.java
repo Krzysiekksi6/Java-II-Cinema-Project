@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import pl.cinema.app.Main;
 
 import java.io.IOException;
 
@@ -14,8 +15,20 @@ public class EmployeePaneController {
 
     @FXML
     Button addMovieButton;
+    @FXML
+    Button buttonBck;
 
     public void initialize(){
+        buttonBck.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    Main.setRoot("mainPane");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
         addMovieButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {

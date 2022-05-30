@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="443.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.AddMovieController">
+<AnchorPane fx:id="ar" prefHeight="443.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.AddMovieController">
    <children>
       <TextField fx:id="nameOfMovie" layoutX="145.0" layoutY="46.0" prefHeight="25.0" prefWidth="206.0" />
       <Label layoutX="21.0" layoutY="320.0" prefHeight="17.0" prefWidth="124.0" text="Choose picture of movie">

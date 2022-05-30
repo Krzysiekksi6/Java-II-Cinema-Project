@@ -9,6 +9,8 @@ public class MoviesRepertoire {
 
     private String presentDate;
 
+    private int dynamicSize;
+
     public int getFlag() {
         return flag;
     }
@@ -23,10 +25,16 @@ public class MoviesRepertoire {
     }
 
     public void currentMovie() throws SQLException {
-        Main.connect.queryMovies(presentDate);
+        Main.connect.queryMovies("2022-05-28");
         System.out.println(presentDate);
         System.out.println(Main.connect.movies.size());
     }
 
+    public int getDynamicSize() {
+        return dynamicSize;
+    }
 
+    public void setDynamicSize(int dynamicSize) {
+        this.dynamicSize = dynamicSize;
+    }
 }

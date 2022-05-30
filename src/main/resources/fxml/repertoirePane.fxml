@@ -4,22 +4,42 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="800.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.RepertoirePaneController">
    <children>
       <Button fx:id="backButton" layoutX="785.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" text="Back" />
       <ImageView fx:id="imgOne" fitHeight="264.0" fitWidth="200.0" layoutX="43.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="labelOne" layoutX="139.0" layoutY="35.0" text="1" />
+      <Label fx:id="labelOne" alignment="CENTER" layoutX="76.0" layoutY="23.0" prefHeight="30.0" prefWidth="140.0" text="1" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
       <ImageView fx:id="imgTwo" fitHeight="264.0" fitWidth="200.0" layoutX="263.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imgThree" fitHeight="264.0" fitWidth="200.0" layoutX="483.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imgFour" fitHeight="264.0" fitWidth="200.0" layoutX="43.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgFour" fitHeight="264.0" fitWidth="200.0" layoutX="43.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imgFive" fitHeight="264.0" fitWidth="200.0" layoutX="263.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imgSix" fitHeight="264.0" fitWidth="200.0" layoutX="483.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="labelTwo" layoutX="359.0" layoutY="35.0" text="1" />
-      <Label fx:id="labelThree" layoutX="579.0" layoutY="35.0" text="1" />
-      <Label fx:id="labelFour" layoutX="139.0" layoutY="382.0" text="1" />
-      <Label fx:id="labelFive" layoutX="359.0" layoutY="382.0" text="1" />
-      <Label fx:id="labelSix" layoutX="579.0" layoutY="382.0" text="1" />
-      <Button fx:id="nextButton" layoutX="803.0" layoutY="329.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="60.0" text="NEXT" />
+      <Label fx:id="labelTwo" alignment="CENTER" layoutX="289.0" layoutY="23.0" prefHeight="30.0" prefWidth="140.0" text="1" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+      <Label fx:id="labelThree" alignment="CENTER" layoutX="509.0" layoutY="23.0" prefHeight="30.0" prefWidth="140.0" text="1" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+      <Label fx:id="labelFour" alignment="CENTER" layoutX="73.0" layoutY="369.0" prefHeight="30.0" prefWidth="140.0" text="1" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+      <Label fx:id="labelFive" alignment="CENTER" layoutX="289.0" layoutY="369.0" prefHeight="30.0" prefWidth="140.0" text="1" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+      <Label fx:id="labelSix" alignment="CENTER" layoutX="509.0" layoutY="369.0" prefHeight="30.0" prefWidth="140.0" text="1" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+      <Button fx:id="nextButton" layoutX="843.0" layoutY="329.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="43.0" text="&gt;" />
+      <Button fx:id="buttonSiteBack" layoutX="800.0" layoutY="329.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="43.0" text="&lt;" />
    </children>
 </AnchorPane>
