@@ -8,6 +8,7 @@ import pl.cinema.app.Main;
 
 import java.io.IOException;
 
+
 public class CinemaDescriptionPaneController {
     @FXML
     private Button backButton;

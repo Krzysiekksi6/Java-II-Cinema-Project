@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.PricePaneController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.PricePaneController">
    <children>
-      <Button fx:id="backButton" layoutX="489.0" layoutY="44.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="66.0" text="Back" />
+      <TableView fx:id="tableViewPrice" layoutX="120.0" layoutY="69.0" prefHeight="153.0" prefWidth="612.0" />
    </children>
 </AnchorPane>

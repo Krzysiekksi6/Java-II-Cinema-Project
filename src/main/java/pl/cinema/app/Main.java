@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The main class for our cinema booking management application
@@ -20,6 +23,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     private static Scene scene;
+    public static Connect connect = new Connect();
 
     /**
      * Constructor off Main Class
@@ -90,6 +94,11 @@ public class Main extends Application {
      */
     public static void main(String[] args) {
         //System.out.println("Main");
+        try {
+            System.out.println(connect.idGenerator());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         launch(args);
     }
 

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -12,9 +14,10 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.ReservationPaneController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.ReservationPaneController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <top>
@@ -30,19 +33,30 @@
             </HBox>
          </top>
          <left>
-            <VBox prefHeight="602.0" prefWidth="206.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="501.0" prefWidth="218.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="46.0" prefWidth="153.0" text="Wybierz datę" />
-                  <DatePicker fx:id="datePicker" onAction="#getDate" promptText="Enter a date" />
-                  <Label prefHeight="44.0" prefWidth="154.0" text="Wybierz film" />
-                  <ChoiceBox prefHeight="27.0" prefWidth="158.0" />
-                  <Label prefHeight="46.0" prefWidth="160.0" text="Wybierz godzinę" />
-                  <ChoiceBox prefWidth="150.0" />
+                  <DatePicker fx:id="datePicker" onAction="#getDate" promptText="Enter a date">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </DatePicker>
+                  <MenuButton fx:id="chooseMovie" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="173.0" text="Wybierz film">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </MenuButton>
+                  <MenuButton fx:id="chooseTime" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="Wybierz godzinę" />
                </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <effect>
+                  <Glow />
+               </effect>
             </VBox>
          </left>
          <center>
-            <AnchorPane prefHeight="602.0" prefWidth="734.0" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="archonPaneReser" prefHeight="501.0" prefWidth="757.0" visible="false" BorderPane.alignment="CENTER">
                <children>
                   <Label layoutX="338.0" layoutY="14.0" text="Legenda">
                      <font>
@@ -52,7 +66,7 @@
                   <Button layoutX="201.0" layoutY="48.0" mnemonicParsing="false" style="-fx-background-color: #32CD32;" text="Wolne" />
                   <Button layoutX="337.0" layoutY="48.0" mnemonicParsing="false" style="-fx-background-color: #FF6347;" text="Zajete" />
                   <Button layoutX="461.0" layoutY="48.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="43.0" style="-fx-background-color: #FFD700;" text="VIP" />
-                  <GridPane layoutX="93.0" layoutY="122.0" prefHeight="302.0" prefWidth="477.0">
+                  <GridPane fx:id="gridPane" layoutX="93.0" layoutY="122.0" onMouseClicked="#test2" prefHeight="302.0" prefWidth="477.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -70,57 +84,93 @@
                       <RowConstraints maxHeight="156.60001220703123" minHeight="10.0" prefHeight="78.60000000000002" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="2" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="3" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="4" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="5" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.rowIndex="3" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.rowIndex="4" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.rowIndex="5" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                        <Rectangle fx:id="rZeroTwo" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.rowIndex="2" />
+                        <Rectangle fx:id="rOneZero" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="1" />
+                        <Rectangle fx:id="rTwoZero" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="2" />
+                        <Rectangle fx:id="rThreeZero" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="3" />
+                        <Rectangle fx:id="rFourZero" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="4" />
+                        <Rectangle fx:id="rFiveZero" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="5" />
+                        <Rectangle fx:id="rZeroOne" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.rowIndex="1" />
+                        <Rectangle fx:id="rOneOne" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Rectangle fx:id="rTwoOne" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Rectangle fx:id="rThreeOne" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Rectangle fx:id="rFourOne" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Rectangle fx:id="rFiveOne" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Rectangle fx:id="rOneFour" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Rectangle fx:id="rOneTwo" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Rectangle fx:id="rTwoTwo" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Rectangle fx:id="rThreeTwo" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Rectangle fx:id="rFourTwo" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <Rectangle fx:id="rFiveTwo" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <Rectangle fx:id="rZeroThree" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.rowIndex="3" />
+                        <Rectangle fx:id="rOneThree" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Rectangle fx:id="rTwoThree" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Rectangle fx:id="rThreeThree" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Rectangle fx:id="rFourThree" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <Rectangle fx:id="rFiveThree" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <Rectangle fx:id="rZeroFour" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.rowIndex="4" />
+                        <Rectangle fx:id="rTwoFour" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Rectangle fx:id="rThreeFour" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Rectangle fx:id="rFourFour" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <Rectangle fx:id="rFiveFour" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <Rectangle fx:id="rZeroFive" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.rowIndex="5" />
+                        <Rectangle fx:id="rOneFive" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Rectangle fx:id="rTwoFive" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Rectangle fx:id="rThreeFive" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <Rectangle fx:id="rFourFive" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                        <Rectangle fx:id="rFiveFive" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" onMouseClicked="#test" stroke="BLACK" strokeType="INSIDE" width="78.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                        <Rectangle fx:id="rZeroZero" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="45.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+                        <Label fx:id="lZeroZero" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" />
+                        <Label fx:id="lOneZero" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="lTwoZero" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="2" />
+                        <Label fx:id="lThreeZero" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="3" />
+                        <Label fx:id="lFourZero" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="4" />
+                        <Label fx:id="lZeroFive" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="5" />
+                        <Label fx:id="lZeroOne" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.rowIndex="1" />
+                        <Label fx:id="lOneOne" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="lTwoOne" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="lThreeOne" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="79.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label fx:id="lFourOne" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label fx:id="lFiveOne" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Label fx:id="lZeroTwo" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.rowIndex="2" />
+                        <Label fx:id="lOneTwo" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="lTwoTwo" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label fx:id="lThreeTwo" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Label fx:id="lFourTwo" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <Label fx:id="lFiveTwo" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <Label fx:id="lZeroThree" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.rowIndex="3" />
+                        <Label fx:id="lOneThree" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="lTwoThree" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label fx:id="lThreeThree" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Label fx:id="lFourThree" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <Label fx:id="lFiveThree" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <Label fx:id="lZeroFour" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.rowIndex="4" />
+                        <Label fx:id="lOneFour" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="lTwoFour" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Label fx:id="lThreeFour" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Label fx:id="lFourFour" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <Label fx:id="lFiveFour" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <Label fx:id="lFiveZero" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.rowIndex="5" />
+                        <Label fx:id="lOneFive" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="lTwoFive" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Label fx:id="lThreeFive" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <Label fx:id="lFourFive" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                        <Label fx:id="lFiveFive" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="95.0" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
-                  <Label layoutX="117.0" layoutY="95.0" text="A" />
+                  <Label layoutX="120.0" layoutY="95.0" text="A" />
                   <Label layoutX="201.0" layoutY="95.0" text="B" />
-                  <Label layoutX="279.0" layoutY="104.0" text="C" />
-                  <Label layoutX="349.0" layoutY="104.0" text="D" />
-                  <Label layoutX="447.0" layoutY="104.0" text="E" />
-                  <Label layoutX="520.0" layoutY="104.0" text="F" />
-                  <Label layoutX="41.0" layoutY="139.0" text="1" />
-                  <Label layoutX="41.0" layoutY="192.0" text="2" />
-                  <Label layoutX="48.0" layoutY="243.0" text="3" />
-                  <Label layoutX="41.0" layoutY="292.0" text="4" />
-                  <Label layoutX="41.0" layoutY="346.0" text="5" />
-                  <Label layoutX="41.0" layoutY="392.0" text="6" />
-                  <Label fx:id="dataLabel" disable="true" layoutX="606.0" layoutY="148.0" prefHeight="48.0" prefWidth="71.0" text="Label" />
+                  <Label layoutX="282.0" layoutY="95.0" text="C" />
+                  <Label layoutX="363.0" layoutY="95.0" text="D" />
+                  <Label layoutX="444.0" layoutY="95.0" text="E" />
+                  <Label layoutX="525.0" layoutY="95.0" text="F" />
+                  <Label layoutX="70.0" layoutY="139.0" text="1" />
+                  <Label layoutX="70.0" layoutY="187.0" text="2" />
+                  <Label layoutX="70.0" layoutY="235.0" prefHeight="18.0" prefWidth="4.0" text="3" />
+                  <Label layoutX="70.0" layoutY="283.0" text="4" />
+                  <Label layoutX="70.0" layoutY="331.0" text="5" />
+                  <Label layoutX="70.0" layoutY="379.0" text="6" />
+                  <Label fx:id="dataLabel" disable="true" layoutX="606.0" layoutY="148.0" prefHeight="48.0" prefWidth="71.0" text="dateLabel" />
                </children>
             </AnchorPane>
          </center>
