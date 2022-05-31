@@ -6,8 +6,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import pl.cinema.app.CreateTicket;
 import pl.cinema.app.Main;
+import pl.cinema.model.Customer;
 
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Arrays;
 
@@ -25,10 +28,22 @@ public class CompleteOrderController {
     TextField phoneNumber;
     @FXML
     Button completeButton;
+    @FXML
+    private TextField lastNameTextField;
+    @FXML
+    private TextField firstNameTextField;
+    @FXML
+    private TextField emailAddrees;
+
 
     String[] seatsArr = new String[ReservationPaneController.howManyTickets];
 
+
+
+
     public void initialize() {
+        CreateTicket createTicket = new CreateTicket();
+        Customer customer = new Customer();
 
         completeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -40,6 +55,16 @@ public class CompleteOrderController {
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
+                }
+                //TODO Zabezpieczenie przed pustym TextField
+                customer.setFirstName(firstNameTextField.getText());
+                customer.setLastName(lastNameTextField.getText());
+                customer.setEmail(emailAddrees.getText());
+
+                try {
+                    createTicket.makeTicket(nameOfMovieLabel.getText(), timeStarts.getText(),customer);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
                 }
             }
         });

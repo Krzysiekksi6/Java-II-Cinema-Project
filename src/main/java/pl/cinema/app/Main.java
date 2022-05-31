@@ -34,7 +34,7 @@ public class Main extends Application {
 
     /**
      * Start method off Application
-     * @param stage
+     * @param stage stage
      * @throws Exception
      */
 
@@ -51,7 +51,7 @@ public class Main extends Application {
 
     /**
      *
-     * @param fxml
+     * @param fxml fxml
      * @throws IOException
      */
     public static void setRoot(String fxml) throws IOException {

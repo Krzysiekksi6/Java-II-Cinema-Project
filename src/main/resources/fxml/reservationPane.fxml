@@ -17,25 +17,25 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.ReservationPaneController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.ReservationPaneController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <top>
             <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="100.0" prefWidth="915.0" text="Reservation Panel">
+                  <Label prefHeight="100.0" prefWidth="915.0" text="Panel Rezerwacji">
                      <font>
                         <Font name="System Bold" size="35.0" />
                      </font>
                   </Label>
-                  <Button fx:id="backButton" mnemonicParsing="false" prefHeight="66.0" prefWidth="198.0" text="Back" />
+                  <Button fx:id="backButton" mnemonicParsing="false" prefHeight="66.0" prefWidth="198.0" text="Wróć" />
                </children>
             </HBox>
          </top>
          <left>
             <VBox alignment="CENTER" prefHeight="501.0" prefWidth="218.0" BorderPane.alignment="CENTER">
                <children>
-                  <DatePicker fx:id="datePicker" onAction="#getDate" promptText="Enter a date">
+                  <DatePicker fx:id="datePicker" onAction="#getDate" promptText="Wprowadz date ">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
