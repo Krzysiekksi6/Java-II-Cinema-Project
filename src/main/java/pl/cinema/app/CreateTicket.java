@@ -22,7 +22,7 @@ import java.io.FileNotFoundException;
 public class CreateTicket {
     private static final String filename = "Bilet.pdf";
 
-    public static void makeTicket(String title, String date, Customer customer) throws FileNotFoundException {
+    public static void makeTicket(String title, String time, Customer customer) throws FileNotFoundException {
 
         PdfWriter pdfWriter = new PdfWriter(filename);
         PdfDocument pdfDocument = new PdfDocument(pdfWriter);
@@ -30,12 +30,12 @@ public class CreateTicket {
 
         Paragraph paragraph2 = new Paragraph("Bilet na film:" + " " + title);
         paragraph2.setTextAlignment(TextAlignment.CENTER);
-        Paragraph paragraph3 = new Paragraph("Data seansu:" + " " + date);
+        Paragraph paragraph3 = new Paragraph("Godzina seansu:" + " " + time);
         paragraph3.setTextAlignment(TextAlignment.CENTER);
         Paragraph paragraph4 = new Paragraph("Osoba rezerwujaca bilet:" + " " + customer.getFirstName() + " " + customer.getLastName());
         paragraph4.setTextAlignment(TextAlignment.CENTER);
         Document document = new Document(pdfDocument);
-        BarcodeQRCode qrCode = new BarcodeQRCode(title + " " + date + " " + customer.getFirstName());
+        BarcodeQRCode qrCode = new BarcodeQRCode(title + " " + time + " " + customer.getFirstName());
         PdfFormXObject barcodeObject = qrCode.createFormXObject(Color.BLACK, pdfDocument);
         Image barcodeImage = new Image(barcodeObject).setWidth(100f).setHeight(100f);
         Paragraph paragraph1 = new Paragraph().add(barcodeImage);

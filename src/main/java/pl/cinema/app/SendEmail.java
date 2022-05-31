@@ -15,8 +15,16 @@ import java.util.Properties;
  */
 public class SendEmail {
 
+    private static final String filename = "Bilet.pdf";
+    private static final String messageText = "Bilet.pdf w zalaczniku";
+    private static final String messageTitle = "Bilet Cinema 3d Tarnow";
 
-    public static void sendEmail(String emailAdress) {
+
+    /**
+     * Method that send email to user
+     * @param emailAddress emailAddress
+     */
+    public static void sendEmail(String emailAddress) {
 
         final String username = "jan.latka.cs@gmail.com";
         final String password = "Haslo1234!";
@@ -37,16 +45,16 @@ public class SendEmail {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("jan.latka.cs@gmail.com"));
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse(emailAdress));
+                    InternetAddress.parse(emailAddress));
 
-            message.setSubject("Bilet");
+            message.setSubject(messageTitle);
             BodyPart messageBodyPart = new MimeBodyPart();
-            messageBodyPart.setText("Bilet.pdf w zalaczniku");
+            messageBodyPart.setText(messageText);
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(messageBodyPart);
             messageBodyPart = new MimeBodyPart();
 
-            String filename = "ticket.pdf";
+
             DataSource source = new FileDataSource(filename);
             messageBodyPart.setDataHandler(new DataHandler(source));
             messageBodyPart.setFileName(filename);
