@@ -56,6 +56,7 @@ public class CompleteOrderController {
                         e.printStackTrace();
                     }
                 }
+                // Krzysiek zmiany --------------------
                 //TODO Zabezpieczenie przed pustym TextField
                 customer.setFirstName(firstNameTextField.getText());
                 customer.setLastName(lastNameTextField.getText());
@@ -67,6 +68,7 @@ public class CompleteOrderController {
                     e.printStackTrace();
                 }
             }
+            // -------------------------------------------------------------------
         });
 
         amountOFTikckets.setText(String.valueOf(ReservationPaneController.howManyTickets));
