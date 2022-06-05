@@ -17,6 +17,6 @@ public class PricePaneController {
 
     public void initialize(){
 
-        Main.connect.gettingDataInputData(tableViewPrice,"SELECT * FROM roznosci.cennik;");
+        Main.connect.gettingPriceMenu(tableViewPrice,"SELECT * FROM roznosci.cennik;");
     }
 }

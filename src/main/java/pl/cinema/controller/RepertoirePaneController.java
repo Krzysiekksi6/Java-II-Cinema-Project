@@ -47,7 +47,6 @@ public class RepertoirePaneController {
     @FXML
     private Button buttonSiteBack;
 
-    int sitesFlag;
     public MoviesRepertoire moviesRepertoire = new MoviesRepertoire();
 
     public void initialize() throws SQLException {
@@ -67,7 +66,10 @@ public class RepertoirePaneController {
             setInfo();
             }
         });
-
+        /**
+         * Funckja(przycisk) odnajdująca filmy i wstawiania je z
+         * zdjęciami
+         */
         buttonSiteBack.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {

@@ -65,10 +65,8 @@ public class AddMovieController {
     DatePicker chooseDate;
 
     public void initialize(){
-        /*
-        String idMovie,String nameOfMovie,
-                               String movieCategory,String startTime,String howLong,
-                               String endTime,String Hall,String minimumAge,String picture,String typeOfScreen,String date){
+        /**
+         * Przycisk od doadania filmu
          */
         addBut.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -163,6 +161,9 @@ public class AddMovieController {
 
     }
 
+    /**
+     * Dobór sciezki z plików
+     */
     public void getTheUserFilePath() {
 
         FileChooser fileChooser = new FileChooser();

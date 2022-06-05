@@ -182,9 +182,6 @@ public class ReservationPaneController {
     AnchorPane archonPaneReser;
 
     @FXML
-    private GridPane gridPane;
-
-    @FXML
     private Button backButton;
 
     @FXML
@@ -215,17 +212,24 @@ public class ReservationPaneController {
      * getDate na onAction w Scene Builder
      * @param event
      */
+
     public void getDate(ActionEvent event) throws SQLException {
         LocalDate myDate = datePicker.getValue();
         String myFormattedDate = myDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         dataLabel.setText(myFormattedDate);
         Main.connect.queryMovies("2020-10-12");
         dataLabel.getText();
-       //System.out.println(Main.connect.movies.get(1));
         menuButtonItems();
     }
 
+    /**
+     * Funckja startowa
+     * i dekleracje przycisków
+     */
     public void initialize(){
+        /**
+         * Przycis od cofania do mainPane
+         */
         backButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -237,27 +241,31 @@ public class ReservationPaneController {
             }
         });
         setFreeSeats();
+        /**
+         * Przycisk rezerwacji
+         */
         reservationButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-
                 howManyTickets = dataToReserve.size();
+
                 nameOfMovie = chooseMovie.getText();
-                //try {
-                 //   Main.connect.addReservationToBase(Main.connect.idGeneratorReservation(),dataToReserve.get(0).get(1),"eee","998","EEEEE");
-                //} catch (SQLException e) {
-                //    e.printStackTrace();
-               // }
+
                 String[] a = new String[0];
+
                 try {
                     a = Main.connect.findById("1");
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+
                 System.out.println(Arrays.toString(a));
+
                 Stage stage = new Stage();
+
                 FXMLLoader fxmlLoader = new FXMLLoader(CompleteOrderController.class.getResource("/fxml/completeOrder.fxml"));
                 Scene scene = null;
+
                 try {
                     scene = new Scene(fxmlLoader.load(),651,322);
                 } catch (IOException e) {
@@ -269,7 +277,9 @@ public class ReservationPaneController {
                 stage.show();
             }
         });
-
+        /**
+         * Przycisk powrotu do mainPane
+         */
         backButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -497,11 +507,14 @@ public class ReservationPaneController {
             }
         });
 
-
-
-
-
     }
+
+    /**
+     * Najpierw wybierana jest data i nazwy filmu leca do kolejnego menubutton
+     * Przyciski pobierające nazwe filmu potem
+     * wrzucają godziny do kolejnego menubutton
+     * a potem generująca przyciski z rezerwacjami i wolnymi miejscami
+     */
     public void menuButtonItems(){
         EventHandler<ActionEvent> event1 = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
@@ -517,10 +530,6 @@ public class ReservationPaneController {
                         String beforeSplit =  (((MenuItem) e.getSource()).getText());
                         String[] afterSplit = beforeSplit.split("\\.");
                         chooseTime.setText(afterSplit[1]);
-                        //String[] afterSplit = ((MenuItem) e.getSource()).getText().split(".");
-                        //chooseTime.setText(afterSplit[0]);
-                        //String[] splliting = getter.split(".");
-                        //chooseTime.setText(splliting[1]);
 
                         data.add(String.valueOf(datePicker.getValue()));
 
@@ -545,7 +554,7 @@ public class ReservationPaneController {
 
                         archonPaneReser.setVisible(true);
                         setFreeSeats();
-
+                        dataToReserve.clear();
                         try {
                             setReservedSeats();
                         } catch (SQLException ex) {
@@ -581,28 +590,42 @@ public class ReservationPaneController {
 
     }
 
+    /**
+     * funcja zaznaczająca zajęte miejsca
+     * @param r prostokąt
+     * @param l napis
+     */
     @FXML
     public void setReserved(Rectangle r,Label l){
         r.setFill(Color.RED);
         l.setText("RESERVED");
     }
-
-
-
     @FXML
     public void test(){
         System.out.println("e");
     }
-
     @FXML
     public void test2(){
         System.out.println("e");
     }
+
+    /**
+     * funckja ustaawijące label i rectangle na wolne czyli zielone
+     * @param r
+     * @param l
+     */
     @FXML
     public void setFree(Rectangle r,Label l){
         r.setFill(Color.GREEN);
         l.setText("FREE");
     }
+    /**
+     * funckja ustaawijące label i rectangle na wolne czyli niebieskie i
+     * dodaje informacje do listy zeby potem dodac je do bazy i ustawić na
+     * zarezerowane
+     * @param r
+     * @param l
+     */
     public void setSelected(Rectangle r,Label l){
         r.setFill(Color.BLUE);
         l.setText("Selected");
@@ -638,6 +661,9 @@ public class ReservationPaneController {
         System.out.println(rowAndColumn[0] + "," + rowAndColumn[1]);
     }
 
+    /**
+     * Funckja ustające wszystkie siedzenia na wolne
+     */
     public void setFreeSeats(){
         setFree(rZeroZero,lZeroZero);
         setFree(rZeroOne,lZeroOne);
@@ -679,10 +705,12 @@ public class ReservationPaneController {
 
     }
 
+    /**
+     * Ustawinie wszystkich przycisków na zarezerwowane przeszując wszytkie miejsca
+     * i jak są wybrane to je rezerwuja
+     * @throws SQLException
+     */
     public void setReservedSeats() throws SQLException {
-        //rezerwacja na switach kolorująca przyciski w kurwe do roboty
-        //trzeba dla kazdego przypadku zrobic case i lecim dalej
-        //case zawiera zero,two -> recntagle.setColor,label.setText
         String[] reservations = Main.connect.getByIdReservations(info).split(",");
         for(int i=0;i<reservations.length-1;i++){
             switch((reservations[i] + reservations[i+1])){

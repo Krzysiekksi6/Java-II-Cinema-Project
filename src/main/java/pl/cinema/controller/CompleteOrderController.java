@@ -44,7 +44,9 @@ public class CompleteOrderController {
     public void initialize() {
         CreateTicket createTicket = new CreateTicket();
         Customer customer = new Customer();
-
+        /**
+         * Przycisk do zkompletowania zamówienia
+         */
         completeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -52,6 +54,7 @@ public class CompleteOrderController {
                     try {
                         Main.connect.addReservationToBase(Main.connect.idGeneratorReservation(),
                                 ReservationPaneController.dataToReserve.get(0).get(1), "Progress", phoneNumber.getText(), seatsArr[i]);
+
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
@@ -61,7 +64,7 @@ public class CompleteOrderController {
                 customer.setFirstName(firstNameTextField.getText());
                 customer.setLastName(lastNameTextField.getText());
                 customer.setEmail(emailAddrees.getText());
-
+                ReservationPaneController.dataToReserve.clear();
                 try {
                     createTicket.makeTicket(nameOfMovieLabel.getText(), timeStarts.getText(),customer);
                 } catch (FileNotFoundException e) {
