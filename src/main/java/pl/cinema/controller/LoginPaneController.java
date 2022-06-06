@@ -11,6 +11,9 @@ import pl.cinema.app.Main;
 
 import java.io.IOException;
 
+/**
+ * Klasa kontrolera logowania
+ */
 public class LoginPaneController {
 
     @FXML
@@ -32,7 +35,7 @@ public class LoginPaneController {
 
 
     /**
-     *
+     * Metoda startowa
      */
     public void initialize() {
         backButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -45,6 +48,9 @@ public class LoginPaneController {
                 }
             }
         });
+        /**
+         * Przycisk logowania
+         */
         logInButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {

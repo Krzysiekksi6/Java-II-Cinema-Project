@@ -11,7 +11,7 @@ import javax.mail.internet.MimeMultipart;
 import java.util.Properties;
 
 /**
- * Class responsible for sending email
+ * Klasa odpowiedzialana za wysylanie emial do klienta
  */
 public class SendEmail {
 

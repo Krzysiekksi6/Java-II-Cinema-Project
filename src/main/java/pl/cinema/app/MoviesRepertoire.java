@@ -5,6 +5,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+/**
+ * Klasa reprezentujaca repertuar
+ */
+
 public class MoviesRepertoire {
 
     private String presentDate;
@@ -36,9 +40,19 @@ public class MoviesRepertoire {
         System.out.println(Main.connect.movies.size());
     }
 
+    /**
+     * Poabiera dynamicznie rozmiar
+     * @return int
+     */
+
     public int getDynamicSize() {
         return dynamicSize;
     }
+
+    /**
+     * Ustawia dynamiczny rozmiar
+     * @param  dynamicSize
+     */
 
     public void setDynamicSize(int dynamicSize) {
         this.dynamicSize = dynamicSize;

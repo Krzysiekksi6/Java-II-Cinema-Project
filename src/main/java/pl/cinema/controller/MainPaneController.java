@@ -13,6 +13,9 @@ import pl.cinema.app.Main;
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ * Klasa kontrolera menu głównego aplikacji
+ */
 public class MainPaneController {
     @FXML
     Stage stage = new Stage();
@@ -35,6 +38,9 @@ public class MainPaneController {
     @FXML
     private Button reservationButton;
 
+    /**
+     * Metoda startowa
+     */
     public void initialize() {
         loginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -46,7 +52,9 @@ public class MainPaneController {
                 }
             }
         });
-
+        /**
+         * Przycisk odpowiedzialny za przejescie do activity prezentacji
+         */
         cinemaButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {

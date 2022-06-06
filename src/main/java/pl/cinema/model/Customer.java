@@ -1,24 +1,49 @@
 package pl.cinema.model;
 
+/**
+ * Klasa opisująca użytkownika
+ */
 public class Customer {
     private String firstName;
     private String lastName;
     private int age;
     private String email;
 
+    /**
+     * Konstruktor klasy użytkownik
+     * @param  firstName firstName
+     * @param lastName firstName
+     * @param age age
+     * @param email email
+     */
     public Customer(String firstName, String lastName, int age, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.email = email;
     }
+
+    /**
+     * Konstruktor klasy użytkownik
+     * @param firstName firstName
+     * @param lastName lastName
+     * @param email email
+     */
     public Customer(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
+
+    /**
+     * Konstruktor bezparametrowy
+     */
     public Customer(){}
 
+    /**
+     * Deklaracja getterów oraz setterów
+     *
+     */
     public String getFirstName() {
         return firstName;
     }

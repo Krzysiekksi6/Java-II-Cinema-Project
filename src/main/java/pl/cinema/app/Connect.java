@@ -14,6 +14,9 @@ import java.util.List;
 
 //Connection module-info tam szukać jakby coś nie działało
 
+/**
+ * Klasa reprezentujaca połączenie z baza danych
+ */
 public class Connect {
 
     public ArrayList<ArrayList<String>> movies = new ArrayList<>();
@@ -99,7 +102,7 @@ public class Connect {
 
     /**
      * Funkcja pobierająca z bazy wszystkie filmy z danego dnia
-     * @param data filmu
+     * @param data data
      * @throws SQLException
      */
 

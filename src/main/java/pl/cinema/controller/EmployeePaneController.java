@@ -11,6 +11,11 @@ import pl.cinema.app.Main;
 
 import java.io.IOException;
 
+/**
+ * Klasa kontrolera
+ * uprawnienia: Pracownik
+ *
+ */
 public class EmployeePaneController {
 
     @FXML
@@ -18,6 +23,9 @@ public class EmployeePaneController {
     @FXML
     Button buttonBck;
 
+    /**
+     * Metoda startowa
+     */
     public void initialize(){
         buttonBck.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -29,6 +37,10 @@ public class EmployeePaneController {
                 }
             }
         });
+
+        /**
+         * Dodawanie filmu do repertuaru znajdujacego sie w bazie danych
+         */
         addMovieButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {

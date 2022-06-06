@@ -13,6 +13,9 @@ import pl.cinema.app.Main;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Klasa kontrolera wspomagajaca dodawanie filmu do bazy danych
+ */
 public class AddMovieController {
     @FXML
     Button loadImage;

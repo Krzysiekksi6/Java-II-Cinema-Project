@@ -13,6 +13,9 @@ import pl.cinema.app.MoviesRepertoire;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * Klasa kontrolera repertuaru filmow
+ */
 public class RepertoirePaneController {
 
     @FXML

@@ -25,6 +25,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Klasa kontrolera rezerwacji
+ */
 public class ReservationPaneController {
 
     static int howManyTickets = 0;
@@ -207,12 +210,12 @@ public class ReservationPaneController {
 
     ArrayList<String> idMovie = new ArrayList<>();
 
-    /**
-     * Zeby nie wywalało Null Pointer Exception trzeba pobierac dane podobnie jak tutaj nizej getDate i nadać metode
-     * getDate na onAction w Scene Builder
-     * @param event
-     */
 
+    /**
+     * Metoda pobierająca date od użytkownika
+     * @param event event
+     * @throws SQLException
+     */
     public void getDate(ActionEvent event) throws SQLException {
         LocalDate myDate = datePicker.getValue();
         String myFormattedDate = myDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
@@ -223,12 +226,11 @@ public class ReservationPaneController {
     }
 
     /**
-     * Funckja startowa
-     * i dekleracje przycisków
+     * Metoda startowa w której zdeklarowane jest nasłuchiwanie na przyciski
      */
     public void initialize(){
         /**
-         * Przycis od cofania do mainPane
+         * Przycisk który ma na celu powrót do menu głównego aplikacji
          */
         backButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override

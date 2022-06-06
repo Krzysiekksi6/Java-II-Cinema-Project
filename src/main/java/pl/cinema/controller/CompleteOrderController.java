@@ -14,7 +14,9 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Arrays;
 
-
+/**
+ * Klasa kontrolera dopelnienia zamowienia biletu na seans
+ */
 public class CompleteOrderController {
     @FXML
     Label amountOFTikckets;
@@ -83,6 +85,9 @@ public class CompleteOrderController {
         System.out.println(ReservationPaneController.dataToReserve);
     }
 
+    /**
+     * Metoda pobierajaca wybrane miejsce
+     */
     public void getSeats(){
         for(int i=0;i<ReservationPaneController.howManyTickets;i++){
             seatsArr[i] = ReservationPaneController.dataToReserve.get(i).get(4);

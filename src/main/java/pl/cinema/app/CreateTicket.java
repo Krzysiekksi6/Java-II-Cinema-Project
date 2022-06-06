@@ -14,14 +14,18 @@ import pl.cinema.model.Customer;
 import java.io.FileNotFoundException;
 
 /**
- *
- * Make Ticket Class
- * Class which create ticket in PDF Format with QR code
- *
+ * Klasa obsługująca tworzenie biletu w formacie PDF wraz z kodem QR
  */
 public class CreateTicket {
     private static final String filename = "Bilet.pdf";
 
+    /**
+     * Metoda przyjmująca poszczególne parametry i tworząca bilet klienta wraz z kodem QR
+     * @param title title
+     * @param time time
+     * @param customer customer
+     * @throws FileNotFoundException
+     */
     public static void makeTicket(String title, String time, Customer customer) throws FileNotFoundException {
 
         PdfWriter pdfWriter = new PdfWriter(filename);

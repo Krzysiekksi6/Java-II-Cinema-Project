@@ -12,8 +12,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * The main class for our cinema booking management application
- *
+ * Główna klasa aplikacji
  * @author Krzysztof Ksiazek
  * @author Jakub Fik
  * @since 31.03.2022
@@ -26,14 +25,14 @@ public class Main extends Application {
     public static Connect connect = new Connect();
 
     /**
-     * Constructor off Main Class
+     * Konstruktor głównej klasy
      */
     public Main() {
         //System.out.println("Constructor");
     }
 
     /**
-     * Start method off Application
+     * Metoda startowa aplikacji
      * @param stage stage
      * @throws Exception
      */
@@ -50,7 +49,7 @@ public class Main extends Application {
     }
 
     /**
-     *
+     * Metoda odpowiedzialna za zmiane Activity
      * @param fxml fxml
      * @throws IOException
      */
@@ -59,7 +58,7 @@ public class Main extends Application {
     }
 
     /**
-     *
+     * Metoda pomocniczna zmiany Activity
      * @param fxml
      * @return
      * @throws IOException
@@ -71,7 +70,7 @@ public class Main extends Application {
 
 
     /**
-     * Method that can be use for read application state
+     * Metoda ktora moze zostac uzyta na potrzeby odtwarzania poprzedniego stanu aplikacji
      * @throws Exception
      */
     @Override
@@ -80,7 +79,7 @@ public class Main extends Application {
     }
 
     /**
-     * Method that can be use for save application state
+     * Metoda ktora moze zostac uzyta do zapisania stanu aplikacji
      * @throws Exception
      */
     @Override
@@ -89,8 +88,8 @@ public class Main extends Application {
     }
 
     /**
-     * The main method that
-     * @param args
+     * Główna metoda aplikacji
+     * @param args args
      */
     public static void main(String[] args) {
         //System.out.println("Main");

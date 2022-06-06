@@ -8,7 +8,9 @@ import pl.cinema.app.Main;
 
 import java.io.IOException;
 
-
+/**
+ * Klasa kontrolera kotra przedstawia opis / prezentacje kina
+ */
 public class CinemaDescriptionPaneController {
     @FXML
     private Button backButton;
