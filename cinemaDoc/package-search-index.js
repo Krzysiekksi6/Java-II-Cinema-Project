@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"Cinema.Booking.System","l":"pl.cinema.app"},{"m":"Cinema.Booking.System","l":"pl.cinema.controller"},{"m":"Cinema.Booking.System","l":"pl.cinema.model"}];updateSearchResults();
