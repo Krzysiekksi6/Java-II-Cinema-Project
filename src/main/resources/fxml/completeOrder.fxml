@@ -7,30 +7,55 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="322.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.CompleteOrderController">
+<AnchorPane prefHeight="701.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.cinema.controller.CompleteOrderController">
    <children>
-      <Label alignment="CENTER" layoutX="139.0" layoutY="14.0" prefHeight="36.0" prefWidth="353.0" text="Dokończ swoje zamówienie">
+      <Label alignment="CENTER" layoutX="324.0" layoutY="14.0" prefHeight="36.0" prefWidth="353.0" text="Dokończ swoje zamówienie">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label fx:id="a" layoutX="25.0" layoutY="63.0" prefHeight="17.0" prefWidth="98.0" text="Ilość biletów:" />
-      <Label fx:id="amountOFTikckets" layoutX="123.0" layoutY="63.0" prefHeight="17.0" prefWidth="19.0" />
-      <Label fx:id="a1" layoutX="25.0" layoutY="90.0" prefHeight="18.0" prefWidth="51.0" text="Miejsca:" />
-      <Label fx:id="a2" layoutX="198.0" layoutY="63.0" prefHeight="18.0" prefWidth="122.0" text="Nazwa filmu:" />
-      <Button fx:id="completeButton" layoutX="267.0" layoutY="271.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Potwierdź" />
-      <Label fx:id="seats" layoutX="72.0" layoutY="90.0" prefHeight="17.0" prefWidth="78.0" />
-      <Label fx:id="nameOfMovieLabel" layoutX="316.0" layoutY="63.0" prefHeight="17.0" prefWidth="78.0" />
-      <Label fx:id="amountOFTikckets3" layoutX="197.0" layoutY="90.0" prefHeight="18.0" prefWidth="132.0" text="Godzina rozpoczęcia" />
-      <Label fx:id="timeStarts" layoutX="341.0" layoutY="90.0" prefHeight="17.0" prefWidth="78.0" />
-      <TextField fx:id="phoneNumber" layoutX="111.0" layoutY="121.0" />
+      <Label fx:id="a" layoutX="249.0" layoutY="89.0" prefHeight="22.0" prefWidth="253.0" text="Ilość biletów:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="amountOFTikckets" layoutX="469.0" layoutY="82.0" prefHeight="36.0" prefWidth="63.0">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label fx:id="a1" layoutX="249.0" layoutY="120.0" prefHeight="28.0" prefWidth="187.0" text="Miejsca:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="a2" layoutX="249.0" layoutY="166.0" prefHeight="28.0" prefWidth="187.0" text="Nazwa filmu:">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Button fx:id="completeButton" layoutX="381.0" layoutY="618.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="199.0" text="Potwierdź" />
+      <Label fx:id="seats" layoutX="414.0" layoutY="106.0" prefHeight="55.0" prefWidth="528.0">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="nameOfMovieLabel" layoutX="441.0" layoutY="157.0" prefHeight="47.0" prefWidth="219.0">
+         <font>
+            <Font size="21.0" />
+         </font></Label>
+      <Label fx:id="amountOFTikckets3" layoutX="242.0" layoutY="209.0" prefHeight="28.0" prefWidth="238.0" text="Godzina rozpoczęcia:">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label fx:id="timeStarts" layoutX="521.0" layoutY="195.0" prefHeight="55.0" prefWidth="162.0">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <TextField fx:id="phoneNumber" layoutX="621.0" layoutY="463.0" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Label layoutX="19.0" layoutY="125.0" prefHeight="17.0" prefWidth="92.0" text="Telefon" />
-      <Label layoutX="19.0" layoutY="160.0" prefHeight="18.0" prefWidth="51.0" text="Email" />
-      <TextField fx:id="emailAddrees" layoutX="111.0" layoutY="157.0" />
-      <Label layoutX="19.0" layoutY="197.0" prefHeight="18.0" prefWidth="38.0" text="Imie" />
-      <Label layoutX="19.0" layoutY="235.0" prefHeight="18.0" prefWidth="63.0" text="Nazwisko" />
-      <TextField fx:id="lastNameTextField" layoutX="111.0" layoutY="232.0" />
-      <TextField fx:id="firstNameTextField" layoutX="111.0" layoutY="194.0" />
+      <Label layoutX="556.0" layoutY="467.0" prefHeight="17.0" prefWidth="92.0" text="Telefon" />
+      <Label layoutX="198.0" layoutY="467.0" prefHeight="18.0" prefWidth="51.0" text="Email" />
+      <TextField fx:id="emailAddrees" layoutX="279.0" layoutY="463.0" />
+      <Label layoutX="575.0" layoutY="351.0" prefHeight="18.0" prefWidth="38.0" text="Imie" />
+      <Label layoutX="192.0" layoutY="351.0" prefHeight="18.0" prefWidth="63.0" text="Nazwisko" />
+      <TextField fx:id="lastNameTextField" layoutX="279.0" layoutY="347.0" />
+      <TextField fx:id="firstNameTextField" layoutX="621.0" layoutY="347.0" />
+      <Button fx:id="wroc" layoutX="852.0" layoutY="24.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>

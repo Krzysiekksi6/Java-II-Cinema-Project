@@ -26,8 +26,10 @@ public class SendEmail {
      */
     public static void sendEmail(String emailAddress) {
 
-        final String username = "jan.latka.cs@gmail.com";
+        final String username = "javaCinemaProject@outlook.com";
         final String password = "Haslo1234!";
+
+
 
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");

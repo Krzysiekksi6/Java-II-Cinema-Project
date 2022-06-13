@@ -262,7 +262,7 @@ public class ReservationPaneController {
                 }
 
                 System.out.println(Arrays.toString(a));
-
+                /*
                 Stage stage = new Stage();
 
                 FXMLLoader fxmlLoader = new FXMLLoader(CompleteOrderController.class.getResource("/fxml/completeOrder.fxml"));
@@ -277,6 +277,13 @@ public class ReservationPaneController {
                 stage.setResizable(false);
                 stage.setScene(scene);
                 stage.show();
+
+                 */
+                try {
+                    Main.setRoot("completeOrder");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
         /**
@@ -628,39 +635,41 @@ public class ReservationPaneController {
      * @param r
      * @param l
      */
-    public void setSelected(Rectangle r,Label l){
-        r.setFill(Color.BLUE);
-        l.setText("Selected");
-        String labelID = l.getId();
+    public void setSelected(Rectangle r,Label l) {
+        if (l.getText().contains("FREE")) {
+            r.setFill(Color.BLUE);
+            l.setText("Selected");
+            String labelID = l.getId();
 
-        labelID = labelID.substring(1);
+            labelID = labelID.substring(1);
 
-        int flag = 0;
-        String[] rowAndColumn  = new String[2];
+            int flag = 0;
+            String[] rowAndColumn = new String[2];
 
-        for(int i=0;i<labelID.length();i++){
-            if(Character.isUpperCase(labelID.charAt(i))){
-                flag++;
-                if(flag > 1){
-                    rowAndColumn[0]= labelID.substring(0,i);
-                    rowAndColumn[1] = labelID.substring(i);
+            for (int i = 0; i < labelID.length(); i++) {
+                if (Character.isUpperCase(labelID.charAt(i))) {
+                    flag++;
+                    if (flag > 1) {
+                        rowAndColumn[0] = labelID.substring(0, i);
+                        rowAndColumn[1] = labelID.substring(i);
+                    }
                 }
             }
+
+            data.add(rowAndColumn[0]);
+            data.add(rowAndColumn[1]);
+
+            System.out.println(data);
+
+            dataToReserve.add((ArrayList<String>) data.clone());
+
+            data.remove(5);
+            data.remove(4);
+
+            System.out.println(dataToReserve);
+            System.out.println(dataToReserve.size());
+            System.out.println(rowAndColumn[0] + "," + rowAndColumn[1]);
         }
-
-        data.add(rowAndColumn[0]);
-        data.add(rowAndColumn[1]);
-
-        System.out.println(data);
-
-        dataToReserve.add((ArrayList<String>) data.clone());
-
-        data.remove(5);
-        data.remove(4);
-
-        System.out.println(dataToReserve);
-        System.out.println(dataToReserve.size());
-        System.out.println(rowAndColumn[0] + "," + rowAndColumn[1]);
     }
 
     /**

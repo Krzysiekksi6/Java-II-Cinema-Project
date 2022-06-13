@@ -50,9 +50,14 @@ public class RepertoirePaneController {
     @FXML
     private Button buttonSiteBack;
 
+    int buttonFlag = 0;
     public MoviesRepertoire moviesRepertoire = new MoviesRepertoire();
 
     public void initialize() throws SQLException {
+        if(buttonFlag >= Main.connect.movies.size())
+        {
+            buttonSiteBack.setVisible(false);
+        }
         backButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -66,7 +71,13 @@ public class RepertoirePaneController {
         nextButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-            setInfo();
+                buttonFlag = Main.connect.movies.size();
+                setInfo();
+                buttonFlag = buttonFlag - moviesRepertoire.flag;
+                if(buttonFlag<=6){
+                    nextButton.setVisible(false);
+                }
+                buttonSiteBack.setVisible(true);
             }
         });
         /**
@@ -79,6 +90,14 @@ public class RepertoirePaneController {
                 moviesRepertoire.flag=moviesRepertoire.flag-(moviesRepertoire.flag%6);
                 moviesRepertoire.setDynamicSize(Main.connect.movies.size());
                 setInfo();
+                nextButton.setVisible(true);
+                buttonFlag = buttonFlag + moviesRepertoire.flag;
+                System.out.println(buttonFlag);
+                if(buttonFlag >= Main.connect.movies.size())
+                {
+                    buttonSiteBack.setVisible(false);
+                }
+
             }
         });
         moviesRepertoire.getTodaysDay();

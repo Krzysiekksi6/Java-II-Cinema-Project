@@ -20,7 +20,7 @@ public class Ticket {
         this.customer = customer;
         this.price = price;
     }
-
+    
     public String getId() {
         return id;
     }

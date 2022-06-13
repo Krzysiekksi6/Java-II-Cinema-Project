@@ -8,9 +8,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import pl.cinema.app.CreateTicket;
 import pl.cinema.app.Main;
+import pl.cinema.app.SendEmail;
 import pl.cinema.model.Customer;
+import pl.cinema.model.Ticket;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Arrays;
 
@@ -18,6 +21,8 @@ import java.util.Arrays;
  * Klasa kontrolera dopelnienia zamowienia biletu na seans
  */
 public class CompleteOrderController {
+    @FXML
+    Button wroc;
     @FXML
     Label amountOFTikckets;
     @FXML
@@ -37,7 +42,7 @@ public class CompleteOrderController {
     @FXML
     private TextField emailAddrees;
 
-
+    final int AGE = 20;
     String[] seatsArr = new String[ReservationPaneController.howManyTickets];
 
 
@@ -49,6 +54,16 @@ public class CompleteOrderController {
         /**
          * Przycisk do zkompletowania zamówienia
          */
+        wroc.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    Main.setRoot("reservationPane");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
         completeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -66,11 +81,20 @@ public class CompleteOrderController {
                 customer.setFirstName(firstNameTextField.getText());
                 customer.setLastName(lastNameTextField.getText());
                 customer.setEmail(emailAddrees.getText());
+                //SendEmail sendEmail = new SendEmail();
+                //sendEmail.sendEmail(emailAddrees.getText());
+                Customer customer1 = new Customer(firstNameTextField.getText(),lastNameTextField.getText(),AGE,emailAddrees.getText());
+                Ticket ticket = new Ticket("0129263845",customer1,26);
                 ReservationPaneController.dataToReserve.clear();
                 try {
                     createTicket.makeTicket(nameOfMovieLabel.getText(), timeStarts.getText(),customer);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
+                }
+                try {
+                    Main.setRoot("reservationPane");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
                 }
             }
             // -------------------------------------------------------------------
